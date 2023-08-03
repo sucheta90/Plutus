@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS plutus_db;
+CREATE DATABASE plutus_db;
