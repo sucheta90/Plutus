@@ -16,10 +16,12 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-// User login
+// User login /api/user/login
 router.post("/login", async (req, res) => {
   try {
+    console.log(`inside login route`);
     const userData = await User.findOne({ where: { email: req.body.email } });
+    console.log(`userData`, userData);
     if (!userData) {
       res
         .status(400)
@@ -37,7 +39,6 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.userName = userData.name;
       req.session.loggedIn = true;
       res.json({ user: userData, message: "You are now logged in!" });
     });

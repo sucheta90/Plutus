@@ -2,7 +2,7 @@ async function signupNewUser(event) {
   event.preventDefault();
   const name = document.getElementById("name-signup").value.trim();
   const email = document.getElementById("email-signup").value.trim();
-  const password = document.getElementById("email-signup").value.trim();
+  const password = document.getElementById("password-signup").value.trim();
 
   if (name && email && password) {
     console.log(`inside signup`);
