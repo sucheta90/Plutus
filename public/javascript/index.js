@@ -8,7 +8,7 @@
 // 12. Heatmap: A heatmap displays data using color gradients to represent different values within a matrix.
 
 // Please provide more context or clarify the term "hgih charts" if you meant something specific that is not covered above.
-var Highcharts = require('highcharts');  
+const Highcharts = require('highcharts');  
 // Load module after Highcharts is loaded
 require('highcharts/modules/exporting')(Highcharts);  
 // Create the chart

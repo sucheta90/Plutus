@@ -40,13 +40,40 @@
       <section class="tile is-child notification is-success">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas asperiores aperiam illo, dignissimos quod doloribus! Corporis dolor magni voluptate tempora! Temporibus quaerat pariatur ratione magni numquam, aliquid libero ad deleniti.</section>
       <section class="column tile bd-notification is-danger ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, tempora omnis aut quo repellendus ea enim a aspernatur beatae quod officia quis similique qui ipsam nam. Illum corrupti accusantium exercitationem!</section>
       </main>
-      <div id="chart-container" style="width: 100%; height: 400px;"></div>
+      <div class="container highcharts chart" style="width:100%; height:400px;"></div>
+      <div class="chart" id="chart-container" style="width: 100%; height: 400px;"></div>
       <figure class="tile is-child notification is-link is-light block">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quisquam porro reiciendis, soluta laudantium dolore, adipisci rem cum dignissimos, facilis nihil corrupti quas cumque eaque! Excepturi quam velit ipsam sint.</figure>
     </div>
   </section>
   <footer>
       
   </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const chart = Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+});</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <script src="path/to/highcharts.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
