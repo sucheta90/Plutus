@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="title is-1">Plutus</h1>
+</div>
+<div class="container is-flex mt-3 p-3 is-justify-content-space-between">
+  {{! This is the header section of the dashboard }}
+  <h2 class="title is-3">The Dashboard</h2>
+  <h2 class="title is-3">Hello {{name}}</h2>
+</div>
+<div class="is-flex container">
+  <aside class="box mr-3">
+    <ul>
+      <li><a href="/budget">Budget</a></li>
+      <li><a href="/transaction">Transaction</a></li>
+      <li><a href="/emergency">Emergency Funds</a></li>
+      <li><a href="/trip">Trip Budget</a></li>
+    </ul>
+    <button id="logout">Logout</button></aside>
+  <div class="box container">
+    {{! This section will have all the charts }}
+  </div>
+</div>
+
+<script src="../js/logout.js"></script>
