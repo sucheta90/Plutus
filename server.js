@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
-
-
-
-
-
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-=======
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
@@ -21,7 +6,6 @@ const routes = require("./controllers");
 const helpers = require("./utils/helpers");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
->>>>>>> 3f3850a0812b0752b7d538d8012b27f3224f1f77
 
 const app = express();
 const PORT = process.env.PORT || 3001;
