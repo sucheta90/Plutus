@@ -8,6 +8,11 @@
 // 12. Heatmap: A heatmap displays data using color gradients to represent different values within a matrix.
 
 // Please provide more context or clarify the term "hgih charts" if you meant something specific that is not covered above.
+var Highcharts = require('highcharts');  
+// Load module after Highcharts is loaded
+require('highcharts/modules/exporting')(Highcharts);  
+// Create the chart
+Highcharts.chart('container', { /*Highcharts options*/ });
 document.addEventListener('DOMContentLoaded', function () {
 	Highcharts.chart(chart-container, {
     title: {
@@ -84,3 +89,41 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }]
 })});
+
+particlesJS('tsparticles-container', {
+    particles: {
+      shape: {
+        type: 'image',
+        image: {
+          src: 'path/to/money-icon.png', // Replace with the path to your money icon image
+          width: 100, // Set the width of the custom particle
+          height: 100, // Set the height of the custom particle
+        },
+      },
+    },
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    Highcharts.chart('chart-container', {
+        chart: {
+            type: 'line' // You can choose the chart type you want (line, bar, pie, etc.)
+        },
+        title: {
+            text: 'My Highcharts Example'
+        },
+        series: [{
+            data: [1, 3, 2, 4, 6, 5] // Example data for the chart
+        }]
+    });
+});
+let chart; // globally available
+document.addEventListener('DOMContentLoaded', function() {
+    chart = Highcharts.stockChart('container', {
+        rangeSelector: {
+            selected: 1
+        },
+        series: [{
+            name: 'USD to EUR',
+            data: usdtoeur // predefined JavaScript array
+       }]
+   });
+});
