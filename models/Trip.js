@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connect´ion");
+const sequelize = require("../config/connection");
 
-class Trip extends Model { }
+class Trip extends Model {}
 
 Trip.init(
   {
@@ -27,30 +27,30 @@ Trip.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       validate: {
-        isDecimal: true
+        isDecimal: true,
       },
     },
     amount: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       validate: {
-        isDecimal: true
-      }
+        isDecimal: true,
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id'
-      }
-    }
+        model: "user",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'trip'
+    modelName: "trip",
   }
 );
 
