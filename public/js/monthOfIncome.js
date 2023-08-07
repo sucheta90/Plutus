@@ -28,21 +28,22 @@ async function addIncome(e) {
   const incomeList = document.querySelector(".income-list"); // the ul
 
   const list = document.createElement("li");
+  list.setAttribute("class", "is-flex is-justify-content-space-evenly ");
   const category = document.createElement("input");
   category.setAttribute("placeholder", "income category");
   category.setAttribute("type", "text");
-  category.setAttribute("class", "category");
+  category.setAttribute("class", "category input is-small is-three-quarters");
   list.appendChild(category);
 
   const amount = document.createElement("input");
   amount.setAttribute("placeholder", "amount");
   amount.setAttribute("type", "number");
-  amount.setAttribute("class", "income");
+  amount.setAttribute("class", "income input is-small ml-3 is-three-quarters");
   list.appendChild(amount);
 
   const removeBtn = document.createElement("button");
   removeBtn.innerHTML = `Remove Item`;
-  removeBtn.setAttribute("class", "remove-list-item");
+  removeBtn.setAttribute("class", "remove-list-item is-small button ml-3");
   removeBtn.addEventListener("click", handleDeleteIncome);
   list.appendChild(removeBtn);
 
@@ -50,14 +51,9 @@ async function addIncome(e) {
 }
 
 function handleDeleteIncome(e) {
-  console.log(`test`);
   const incomeList = document.querySelector(".income-list"); // the ul
   let item = e.target.parentElement;
   incomeList.removeChild(item);
 }
-
-// document
-//   .querySelector(".remove-list-item")
-//   .addEventListener("click", handleDeleteIncome);
 
 document.getElementById("add").addEventListener("click", addIncome);

@@ -1,13 +1,22 @@
-<section>
-  <p>Enter your monthly paychecks and other regular income.</p>
-  <div>
-    <h4>Income for <span id="month-of-income"></span></h4>
+<section class="card is-halfheight">
+  <p class="">Enter your monthly paychecks and other regular income.</p>
+  <div class="mt-3">
+    <h4 class="mb-2">Income for <span id="month-of-income"></span></h4>
     {{! <form class"assets-form">  }}
-    <button id="add">Add more +</button>
-    <ul class="income-list">
+    <button id="add" class="mb-2">Add more +</button>
+    <ul class="income-list mb-5">
       <li>
-        <input type="text" class="category" placeholder="income category" />
-        <input type="number" class="income" placeholder="amount" />
+        {{! <input
+          type="text"
+          class="category input is-small"
+          placeholder="income category"
+        />
+        <input
+          type="number"
+          class="income input is-small"
+          placeholder="amount"
+        /> }}
+
       </li>
     </ul>
     {{! </form> }}
