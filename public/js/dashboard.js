@@ -139,11 +139,11 @@ Highcharts.chart('high-container', {
   },
   plotOptions: {
     pie: {
-      innerSize: 50,
+      innerSize: 75,
       depth: 65,
       dataLabels: {
         style: {
-          color: '#FF5733', // Set the color for the series labels
+          color: '#4169E1', // Set the color for the series labels
         },
       },
     },

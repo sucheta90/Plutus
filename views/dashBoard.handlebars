@@ -8,11 +8,9 @@
 <div class="container is-flex">
   {{!-- {{> asideNav}} --}}
   <div class="container">
-    <h2 class="title is-5">The Dashboard</h2>
+    <h2 class="title is-4 box">The Dashboard</h2>
     {{! This section will have all the charts }}
-    <p id="budgetTotal">{{budgetTotal}}</p>
-<p id="assetTotal">{{assetTotal}}</p>
-<p id="liabilitiesTotal">{{liabilitiesTotal}}</p>
+    
     
   </div>
   
@@ -26,7 +24,11 @@
 </section>
 <div class="column notification is-mobile is-three-quarters" id="high-container" style="width:100%; height:400px;"></div>
   </div>
-
+  <figure class="is-center is-hidden">
+<p id="budgetTotal">{{budgetTotal}}</p>
+<p id="assetTotal">{{assetTotal}}</p>
+<p id="liabilitiesTotal">{{liabilitiesTotal}}</p>
+</figure>
 </div>
 
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
