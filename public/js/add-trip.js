@@ -5,7 +5,9 @@ async function addTripExpense(event) {
   const category = document.querySelector('#category').value;
   const quantity = document.querySelector('#quantity').value;
   const unit_cost = document.querySelector('#unit-cost').value;
-  const amount = document.querySelector('#amount').value;
+  // const amount = document.querySelector('#amount').value;
+  const amount = calculateAmount(quantity, unit_cost);
+  console.log(amount);
   // Send fetch request to add a new trip
   const response = await fetch(`/api/trip`, {
     method: 'POST',
@@ -26,6 +28,14 @@ async function addTripExpense(event) {
   } else {
     alert('Failed to add trip');
   }
+}
+
+function calculateAmount(q, u) {
+  // q = document.querySelector('#quantity').value;
+  // u = document.querySelector('#unit-cost').value;
+  let a = parseFloat(q) * parseFloat(u);
+  console.log(a);
+  return a;
 }
 
 document.querySelector('#submit-trip').addEventListener('click', addTripExpense);

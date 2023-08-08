@@ -3,6 +3,7 @@ const { Asset, Liabilities, User, Trip } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
+    console.log(req.body);
     const tripItem = await Trip.create(req.body, {
       // TODO Insert User ID somehow so it shows up as NOT null in trip table
     })
@@ -14,6 +15,7 @@ router.post("/", async (req, res) => {
     res.status(200).json("Success!!")
   }
   catch (err) {
+    console.log(err);
     res.status(500).json(err)
   }
 });
