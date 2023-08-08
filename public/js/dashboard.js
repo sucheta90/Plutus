@@ -112,7 +112,7 @@ if (budget1 > 0) {
     
     
     document.addEventListener('DOMContentLoaded', function () {
-    const chart = Highcharts.chart('container', {
+    const chart = Highcharts.chart('high-container', {
       title: {
           text: 'Income/Savings breakdown',
           align: 'center'
