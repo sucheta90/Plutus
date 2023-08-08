@@ -1,3 +1,4 @@
+
 // Sample data
 const incomes1 = [10003, 15004, 12004];
 const incomes2 = [10003, 15004, 12004];
@@ -117,223 +118,44 @@ if (budget1 > 0) {
 // ===================================================================================================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  const chart = Highcharts.chart("high-container", {
-    title: {
-      text: "Income/Savings breakdown",
-      align: "center",
+  const budgetTotal = parseFloat(document.getElementById('budgetTotal').textContent);
+const assetTotal = parseFloat(document.getElementById('assetTotal').textContent);
+const liabilitiesTotal = parseFloat(document.getElementById('liabilitiesTotal').textContent);
+Highcharts.chart('high-container', {
+  chart: {
+    type: 'pie',
+    options3d: {
+      enabled: true,
+      alpha: 45,
     },
-    xAxis: {
-      categories: [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+  },
+  title: {
+    text: 'Total Overview',
+    align: 'left',
+  },
+  subtitle: {
+    text: '3D donut in Highcharts',
+    align: 'left',
+  },
+  plotOptions: {
+    pie: {
+      innerSize: 50,
+      depth: 65,
+      dataLabels: {
+        style: {
+          color: '#FF5733', // Set the color for the series labels
+        },
+      },
+    },
+  },
+  series: [
+    {
+      name: 'total overview',
+      data: [
+        ['total income', assetTotal],
+        ['total expenses', liabilitiesTotal],
+        ['savings', budgetTotal],
       ],
     },
-    yAxis: {
-      title: {
-        text: "Dollars",
-      },
-    },
-    tooltip: {
-      valueSuffix: "Dollars",
-    },
-    plotOptions: {
-      series: {
-        borderRadius: "25%",
-      },
-    },
-    series: [
-      {
-        type: "column",
-        name: "income",
-        data: [
-          totalIncome1,
-          totalIncome2,
-          totalIncome3,
-          totalIncome4,
-          totalIncome5,
-          totalIncome6,
-          totalIncome7,
-          totalIncome8,
-          totalIncome9,
-          totalIncome10,
-          totalIncome11,
-          totalIncome12,
-        ],
-      },
-      {
-        type: "column",
-        name: "expenses",
-        data: [
-          totalExpenses1,
-          totalExpenses2,
-          totalExpenses3,
-          totalExpenses4,
-          totalExpenses5,
-          totalExpenses6,
-          totalExpenses7,
-          totalExpenses8,
-          totalExpenses9,
-          totalExpenses10,
-          totalExpenses11,
-          totalExpenses12,
-        ],
-      },
-      {
-        type: "column",
-        name: "saving",
-        data: [
-          budget1,
-          budget2,
-          budget3,
-          budget4,
-          budget5,
-          budget6,
-          budget7,
-          budget8,
-          budget9,
-          budget10,
-          budget11,
-          budget12,
-        ],
-      },
-      {
-        type: "spline",
-        name: "Average",
-        data: [
-          averageIncome1,
-          averageExpenses2,
-          averageExpenses3,
-          averageExpenses4,
-          averageExpenses5,
-          averageExpenses6,
-          averageExpenses7,
-          averageExpenses8,
-          averageExpenses9,
-          averageExpenses10,
-          averageExpenses11,
-          averageExpenses12,
-        ],
-        marker: {
-          lineWidth: 2,
-          lineColor: Highcharts.getOptions().colors[3],
-          fillColor: "white",
-        },
-      },
-      {
-        type: "pie",
-        name: "Total",
-        data: [
-          {
-            name: "jan",
-            y: totalIncome1,
-            color: Highcharts.getOptions().colors[0], // 2020 color
-            dataLabels: {
-              enabled: false,
-              distance: -50,
-              format: "{point.total} M",
-              style: {
-                fontSize: "15px",
-              },
-            },
-          },
-          {
-            name: "feb",
-            y: totalIncome2,
-            color: Highcharts.getOptions().colors[1], // 2022 color
-          },
-          {
-            name: "mar",
-            y: totalIncome3,
-            color: Highcharts.getOptions().colors[1], // 2022 color
-          },
-          {
-            name: "aprl",
-            y: totalIncome4,
-            color: Highcharts.getOptions().colors[3], // 2022 color
-          },
-          {
-            name: "may",
-            y: totalIncome5,
-            color: Highcharts.getOptions().colors[4], // 2022 color
-          },
-          {
-            name: "jun",
-            y: totalIncome6,
-            color: Highcharts.getOptions().colors[5], // 2022 color
-          },
-          {
-            name: "jul",
-            y: totalIncome7,
-            color: Highcharts.getOptions().colors[6], // 2022 color
-          },
-          {
-            name: "aug",
-            y: totalIncome8,
-            color: Highcharts.getOptions().colors[7], // 2022 color
-          },
-          {
-            name: "sept",
-            y: totalIncome9,
-            color: Highcharts.getOptions().colors[8], // 2022 color
-          },
-          {
-            name: "oct",
-            y: totalIncome10,
-            color: Highcharts.getOptions().colors[9], // 2022 color
-          },
-          {
-            name: "nov",
-            y: totalIncome11,
-            color: Highcharts.getOptions().colors[2], // 2022 color
-          },
-          {
-            name: "dec",
-            y: totalIncome12,
-            color: Highcharts.getOptions().colors[4], // 2022 color
-          },
-        ],
-        center: [75, 65],
-        size: 100,
-        innerSize: "70%",
-        showInLegend: false,
-        dataLabels: {
-          enabled: false,
-        },
-      },
-    ],
-  });
-});
-
-// async function calculateTotalAmount() {
-//   try {
-//     const result = await Asset.findOne({
-//       attributes: [
-//         [sequelize.fn("SUM", sequelize.col("amount")), "totalAmount"],
-//       ],
-//     });
-
-//     return result.getDataValue("totalAmount");
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// }
-
-// calculateTotalAmount()
-//   .then((totalAmount) => {
-//     console.log("Total Amount:", totalAmount);
-//     document.getElementById("totalAsset").innerText(totalAmount);
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   })();
+  ],
+})});
