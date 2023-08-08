@@ -1,0 +1,39 @@
+<div class="columns is-desktop mt-5">
+  <div class="column is-one-third-desktop">
+    {{!-- {{> asideNav}} --}}
+  </div>
+  <section class="column p-5">
+    <h1 class="is-size-5">Assets</h1>
+    <p class="">Enter your monthly paychecks and other regular income.</p>
+
+    <h4 class="mb-2">Income for <span id="month-of-income"></span></h4>
+    {{! <form class"assets-form">  }}
+    <button id="add" class="mb-2 button is-primary is-small">Add more +</button>
+    <ul class="income-list mb-5">
+      {{! get's list items }}
+    </ul>
+  </section>
+  <div class="column level-item has-text-centered is-fullwidth-mobile">
+    <table class="table is-striped is-fullwidth">
+      <thead>Assets</thead>
+      <tr>
+        <th>Categoty</th>
+        <th>Amount</th>
+      </tr>
+      {{#each assets as |asset|}}
+        <tr>
+          <td>{{asset.name}}</td>
+          <td class="actual_income">{{asset.amount}}</td>
+        </tr>
+      {{/each}}
+      <tfoot>
+        <td>Total Income</td>
+        <td id="total-amount"></td>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+
+<script src="../../js/monthOfIncome.js"></script>
+

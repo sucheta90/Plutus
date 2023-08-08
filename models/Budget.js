@@ -1,27 +1,22 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Liabilities extends Model {}
+class Budget extends Model {}
 
-Liabilities.init(
+Budget.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
       autoIncrement: true,
+      primaryKey: true,
     },
-
     category: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
-    amount: {
-      type: DataTypes.DECIMAL(10, 2),
+    limit_amount: {
+      type: DataTypes.DECIMAL,
       allowNull: false,
-      validate: {
-        isDecimal: true,
-      },
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -36,8 +31,8 @@ Liabilities.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "liabilities",
+    modelName: "budget",
   }
 );
 
-module.exports = Liabilities;
+module.exports = Budget;

@@ -5,7 +5,7 @@ const budgetRoute = require("./budgetRoute");
 const tripRoute = require("./tripRoute");
 
 router.use("/user", userRoute);
-router.use("transaction", transactionRoute);
+router.use("/transaction", transactionRoute);
 router.use("/budget", budgetRoute);
 router.use("/trip", tripRoute);
 

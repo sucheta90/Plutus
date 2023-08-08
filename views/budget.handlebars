@@ -1,13 +1,69 @@
-{{log this}}
-<div class="container is-flex mt-3 p-3 is-justify-content-space-between">
-  {{! This is the header section of the dashboard }}
-  
-</div>
-<div class="container is-flex">
-{{> asideNav}}
-<div class="container">
-  <h2 class="title is-5">Budget Planner</h2>
-    {{! This section will have all the charts }}
+<div>
+
+  <div class="">
+    <h2 class="title is-5">Budget Planner</h2>
+    <div class="">
+      <table class="table is-striped">
+        <thead>
+          <th>
+            Planned Bills and Subscriptions
+          </th>
+        </thead>
+        <tr>
+          <th>Category</th>
+          <th>Planned Amount</th>
+          <th></th>
+        </tr>
+        <tr class="">
+          <td>
+            <select class="select p-1 category">
+
+              <option value="mortgage">Mortgage/Rent</option>
+              <option value="water">Water</option>
+              <option value="naturalGas">Natual Gas</option>
+              <option value="electricity">Electricity</option>
+              <option value="internet">Internet</option>
+              <option value="streamingServices">Streaming Services</option>
+              <option value="trash">Trash</option>
+              <option value="phone">Phone</option>
+              <option value="healthIn">Health Insurance</option>
+              <option value="lifeIn">Life Insurance</option>
+              <option value="autoIn">Auto Insurance</option>
+              <option value="gym">Gym</option>
+              <option value="grocery">Grocery</option>
+              <option value="miscellaneous">Miscellaneous</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" placeholder="planned" class="amount input" />
+          </td>
+          <td>
+            <button class="button is-primary" id="save-btn">Save</button>
+          </td>
+        </tr>
+      </table>
+      <div class="is-flex is-justify-content-center">
+        <table class="table is-striped">
+          <tr>
+            <th>Category</th>
+            <th>Planned</th>
+          </tr>
+          {{log this}}
+          {{#each budgets as |budget|}}
+            <tr>
+              <td>{{budget.category}}</td>
+              <td class="limit_amount">{{budget.limit_amount}} </td>
+            </tr>
+          {{/each}}
+          <tfoot>
+            <td>Total</td>
+            <td id="total-amount"></td>
+          </tfoot>
+        </table>
+
+      </div>
+
+    </div>
   </div>
 </div>
-</div>
+<script src="../js/budgeting.js"></script>
