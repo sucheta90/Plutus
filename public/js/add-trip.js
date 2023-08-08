@@ -5,8 +5,9 @@ async function addTripExpense(event) {
   const category = document.querySelector('#category').value;
   const quantity = document.querySelector('#quantity').value;
   const unit_cost = document.querySelector('#unit-cost').value;
-  const amount = document.querySelector('#amount').value;
- 
+  // const amount = document.querySelector('#amount').value;
+  const amount = calculateAmount(quantity, unit_cost);
+  console.log(amount);
   // Send fetch request to add a new trip
   const response = await fetch(`/api/trip`,
   {
@@ -36,11 +37,7 @@ const tripChart = async ()=> {
   const response = await fetch('/api/trip')
   const trips = await response.json()
   console.log(parseInt(trips[0].unit_cost));
-  const expenses = [
-    { description, amount},
-    { description, amount},
-    // Add more data objects here as needed
-  ];
+  
   const customColors = ['#FF5733', '#3399FF', '#33FF77', '#FFCC33', '#FF33E9', '#AABBCC'];
   
   Highcharts.setOptions({
@@ -156,6 +153,15 @@ const tripChart = async ()=> {
   //     }
   //   ]
   // });
-}
+};
 tripChart()
 
+function calculateAmount(q, u) {
+  // q = document.querySelector('#quantity').value;
+  // u = document.querySelector('#unit-cost').value;
+  let a = parseFloat(q) * parseFloat(u);
+  console.log(a);
+  return a;
+}
+
+document.querySelector('#submit-trip').addEventListener('click', addTripExpense);
