@@ -97,3 +97,11 @@ async function addToDataBase(e) {
   console.log(sum);
   document.getElementById("total-amount").innerText = `$ ${sum}`;
 })();
+export async function findTotal() {
+  let sum = 0;
+  const amountClass = await document.querySelectorAll(".actual_income");
+  for (let each of amountClass) {
+    sum += parseInt(each.innerHTML);
+  }
+  return sum;
+}

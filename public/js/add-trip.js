@@ -70,7 +70,7 @@ const tripChart = async ()=> {
         align: 'left'
     },
     subtitle: {
-        text: 'Click the slices to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>',
+        text: 'Click the slices to view versions.',
         align: 'left'
     },
   
@@ -90,17 +90,14 @@ const tripChart = async ()=> {
             borderRadius: 5,
             dataLabels: {
                 enabled: true,
-                format: '{point.name}: {point.y:.1f}%'
+                format: '{point.name}: {point.y:.1f}%',
+                style: {
+                  color: '#FF5733', // Change to your desired color
+                },
             },
             // colors: customColors,
         }
     },
-  
-    tooltip: {
-        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
-    },
-    
     series: [
         {
             name: 'expenses',
