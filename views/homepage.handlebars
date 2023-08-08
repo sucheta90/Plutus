@@ -1,0 +1,31 @@
+<section class="homepage ">
+  <div class="hero-body">
+   
+    <p class="title image-container">
+      <image src="./asset/Plutus-logos_transparent.png" class="image"/>
+    </p>
+    
+    <p class="subtitle">
+      <a href="/login" class="button m-3">Login</a>
+      <a href="/signup" class="button">Sign Up</button></a>
+    </p>
+  </div>
+</section>
+
+
+{{log this}}
+<div class="container is-flex mt-3 p-3 is-justify-content-space-between">
+  {{! This is the header section of the dashboard }}
+  <h2 class="title is-5">Hello {{name}}</h2>
+</div>
+<div class="container is-flex">
+{{> asideNav}}
+<div class="container " >
+  <h2 class="title is-5">The Dashboard</h2>
+    {{! This section will have all the charts }}
+    <div id="container" style="width:100%; height:400px;"></div>
+    
+  </div>
+</div>
+</div>
+<script src="../js/homepage.js"></script>

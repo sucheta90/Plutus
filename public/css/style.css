@@ -1,0 +1,26 @@
+.homepage {
+  background-color: hsl(141, 73%, 41%);
+  height: 100%;
+}
+.image {
+  width: 100%;
+}
+.button {
+  width: 100%;
+}
+
+.image-container {
+  width: 10em;
+  margin: 0 auto;
+}
+.subtitle {
+  width: 10em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  text-align: center;
+}
