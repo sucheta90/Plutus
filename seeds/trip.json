@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Flights",
+    "category": "Transportation",
+    "quantity": "2",
+    "unit_cost": "600.00",
+    "amount": "1200.00"
+  },
+  {
+    "description": "Hotel",
+    "category": "Lodging",
+    "quantity": "5",
+    "unit_cost": "120.00",
+    "amount": "600.00"
+  }
+]
