@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Liabilities extends Model {}
+class Expense extends Model {}
 
-Liabilities.init(
+Expense.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,14 +11,18 @@ Liabilities.init(
       primaryKey: true,
       autoIncrement: true,
     },
-
-    category: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    amount: {
+    expense_amount: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
+      allowNull: true,
+      defaultValue: 0,
+      validate: {
+        isDecimal: true,
+      },
+    },
+    budget_amount: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true,
+      defaultValue: 0,
       validate: {
         isDecimal: true,
       },
@@ -30,14 +34,22 @@ Liabilities.init(
         key: "id",
       },
     },
+    month_year_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    category_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "liabilities",
+    modelName: "expense",
   }
 );
 
-module.exports = Liabilities;
+module.exports = Expense;
