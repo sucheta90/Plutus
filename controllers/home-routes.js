@@ -56,7 +56,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
     const budgetTotal = budgetArr.reduce((a, b) => a + b, 0);
     const assetTotal = assetArr.reduce((a, b) => a + b, 0);
     const liabilitiesTotal = liabilitiesArr.reduce((a, b) => a + b, 0);
-
+    console.log(liabilitiesTotal);
+console.log(budgetTotal,assetTotal,liabilitiesTotal);
     res.render("dashboard", {
       user: user,
       budgetTotal: budgetTotal,
