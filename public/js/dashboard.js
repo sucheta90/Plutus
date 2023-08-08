@@ -111,12 +111,11 @@ if (budget1 > 0) {
 
 
     // ===================================================================================================================================
-//    
-
-// async function createChart() {
-//   import { findTotal } from './monthOfIncome.js';
-// //   // Calculate the total amount
-//   const totalAmount = await findTotal();
+// import { findTotal } from './monthOfIncome.j';
+    
+    
+//       const totalAmount = await findTotal(findTotal);
+    
     
     document.addEventListener('DOMContentLoaded', function () {
       

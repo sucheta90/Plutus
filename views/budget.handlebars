@@ -1,13 +1,13 @@
 <div>
-<div class="columns">
-  <div class="column is-one-quarter">
+<div class="columns tile is-ancestor is-inline">
+  <div class="column is-2 is-mobile is-parent">
       {{> asideNav}}  
     </div>
 </div>
-  <div class="is-mobile">
-    <h2 class="title is-5">Budget Planner</h2>
+  <div class="is-mobile tile is-4 is-parent ">
+    <h2 class="title is-5 is-child notification ">Budget Planner</h2>
     <div class="">
-      <table class="table is-striped is-mobile">
+      <table class="table is-2  is-striped is-mobile">
         <thead>
           <th>
             Planned Bills and Subscriptions
@@ -20,7 +20,7 @@
         </tr>
         <tr class="">
           <td>
-            <select class="select p-1 category">
+            <select class="select p-1 category is-12">
 
               <option value="mortgage">Mortgage/Rent</option>
               <option value="water">Water</option>

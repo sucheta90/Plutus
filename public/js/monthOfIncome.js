@@ -104,4 +104,4 @@ export async function findTotal() {
     sum += parseInt(each.innerHTML);
   }
   return sum;
-}
+};
