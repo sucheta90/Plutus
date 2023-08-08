@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Asset, Liabilities, Trip } = require("../models");
+const { findAll } = require("../models/User");
 const withAuth = require("../utils/auth");
 
 router.get("/login", async (req, res) => {
@@ -90,7 +91,9 @@ router.get("/emergency", withAuth, async (req, res) => {
 // Route to get the Trip only if Authorized user
 router.get("/trip", withAuth, async (req, res) => {
   try {
-    res.render("tripBudget");
+    const tripData = await Trip.findAll()
+    const trips = tripData.map(el => el.get({pure:true}))
+    res.render("tripBudget", {trips});
   } catch (err) {
     res.status(500).json(err);
   }
