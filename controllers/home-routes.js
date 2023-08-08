@@ -40,7 +40,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
 // Route to get the Budget only if Authorized user
 router.get("/budget", withAuth, async (req, res) => {
   try {
-    console.log("inside budget");
     res.render("budget");
   } catch (err) {
     res.status(500).json(err);
@@ -48,9 +47,32 @@ router.get("/budget", withAuth, async (req, res) => {
 });
 
 // Route to get the Transaction only if Authorized user
-router.get("/transaction", withAuth, async (req, res) => {
+router.get("/transaction/asset", withAuth, async (req, res) => {
   try {
-    res.render("transactions");
+    const assetData = await Asset.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    const assets = assetData.map((el) => {
+      return el.get({ pure: true });
+    });
+    res.render("incomes", { assets });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+// Route to get the Transaction only if Authorized user
+router.get("/transaction/liabilities", withAuth, async (req, res) => {
+  try {
+    const allLiabilities = await Liabilities.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    const liabilities = allLiabilities.map((each) => each.get({ pure: true }));
+
+    res.render("expenses", { liabilities });
   } catch (err) {
     res.status(500).json(err);
   }

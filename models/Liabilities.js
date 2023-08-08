@@ -11,7 +11,8 @@ Liabilities.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+
+    category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -21,10 +22,6 @@ Liabilities.init(
       validate: {
         isDecimal: true,
       },
-    },
-    category: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
