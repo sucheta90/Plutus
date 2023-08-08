@@ -26,16 +26,16 @@ Trip.init(
     unit_cost: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
-      validate: {
-        isDecimal: true,
-      },
+      // validate: {
+      //   isDecimal: true,
+      // },
     },
     amount: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
-      validate: {
-        isDecimal: true,
-      },
+      // validate: {
+      //   isDecimal: true,
+      // },
     },
     user_id: {
       type: DataTypes.INTEGER,
