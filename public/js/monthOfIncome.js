@@ -72,7 +72,7 @@ document.getElementById("add").addEventListener("click", addIncome);
 async function addToDataBase(e) {
   let listItem = this.parentElement;
   let name = listItem.firstChild.value.trim();
-  let amount = parseInt(listItem.firstChild.nextSibling.value.trim());
+  let amount = parseFloat(listItem.firstChild.nextSibling.value.trim());
 
   const response = await fetch("/api/transaction/asset", {
     method: "POST",
