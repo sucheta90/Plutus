@@ -15,3 +15,14 @@ async function addExpense(e) {
 }
 
 document.querySelector("#add-expense").addEventListener("click", addExpense);
+
+(async function findTotal(e) {
+  let sum = 0;
+  const amountClass = await document.querySelectorAll(".actual_expense");
+  for (let each of amountClass) {
+    console.log(parseInt(each.innerHTML));
+    sum += parseInt(each.innerHTML);
+  }
+  console.log(sum);
+  document.getElementById("total-amount").innerText = `$ ${sum}`;
+})();

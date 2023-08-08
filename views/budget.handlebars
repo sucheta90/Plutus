@@ -1,17 +1,23 @@
+<div>
 
+  <div class="">
+    <h2 class="title is-5">Budget Planner</h2>
+    <div class="">
+      <table class="table is-striped">
+        <thead>
+          <th>
+            Planned Bills and Subscriptions
+          </th>
+        </thead>
+        <tr>
+          <th>Category</th>
+          <th>Planned Amount</th>
+          <th></th>
+        </tr>
+        <tr class="">
+          <td>
+            <select class="select p-1 category">
 
-
-
-<div class="columns is-desktop">
-  <section class="column">{{> asideNav}}</section>
-  <div class="column">
-  <h2 class="title is-5">Budget Planner</h2>
-  <div class="column">
-     <div>
-      <h2 class="title is-5"> Planned Bills and Subscriptions</h2>
-      <section class="is-flex column">
-          <select class="select m-2 p-1 category">
-             
               <option value="mortgage">Mortgage/Rent</option>
               <option value="water">Water</option>
               <option value="naturalGas">Natual Gas</option>
@@ -26,25 +32,38 @@
               <option value="gym">Gym</option>
               <option value="grocery">Grocery</option>
               <option value="miscellaneous">Miscellaneous</option>
-          </select> 
-          <input type="number" placeholder="planned" class="amount input mr-3"/>
-          <button class="button is-primary" id="save-btn">Save</button>
-      </section>
-    </div>
-    <div class="column">
-      <table>
-
+            </select>
+          </td>
+          <td>
+            <input type="number" placeholder="planned" class="amount input" />
+          </td>
+          <td>
+            <button class="button is-primary" id="save-btn">Save</button>
+          </td>
+        </tr>
       </table>
+      <div class="is-flex is-justify-content-center">
+        <table class="table is-striped">
+          <tr>
+            <th>Category</th>
+            <th>Planned</th>
+          </tr>
+          {{log this}}
+          {{#each budgets as |budget|}}
+            <tr>
+              <td>{{budget.category}}</td>
+              <td class="limit_amount">{{budget.limit_amount}} </td>
+            </tr>
+          {{/each}}
+          <tfoot>
+            <td>Total</td>
+            <td id="total-amount"></td>
+          </tfoot>
+        </table>
+
+      </div>
 
     </div>
-  
   </div>
 </div>
-</div>  
 <script src="../js/budgeting.js"></script>
-
-
-
-  
-   
-

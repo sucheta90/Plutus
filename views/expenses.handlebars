@@ -1,52 +1,55 @@
 <div class="columns is-desktop mt-5">
   <section class="column is-one-third-desktop">
-{{> asideNav}}
+    {{!-- {{> asideNav}} --}}
   </section>
-<div class="column p-5 is-fullwidth-mobile">
-  <select class="select column p-1 mb-2 category" id="test">
-    Bills and Subscriptions
-    <option value="mortgage">Mortgage/Rent</option>
-    <option value="water">Water</option>
-    <option value="naturalGas">Natual Gas</option>
-    <option value="electricity">Electricity</option>
-    <option value="internet">Internet</option>
-    <option value="streamingServices">Streaming Services</option>
-    <option value="trash">Trash</option>
-    <option value="phone">Phone</option>
-    <option value="healthIn">Health Insurance</option>
-    <option value="lifeIn">Life Insurance</option>
-    <option value="autoIn">Auto Insurance</option>
-    <option value="gym">Gym</option>
-    <option value="grocery">Grocery</option>
-    <option value="miscellaneous">Miscellaneous</option>
-  </select>
+  <div class="column p-5 is-fullwidth-mobile">
+    <select class="select column p-1 mb-2 category" id="test">
+      Bills and Subscriptions
+      <option value="mortgage">Mortgage/Rent</option>
+      <option value="water">Water</option>
+      <option value="naturalGas">Natual Gas</option>
+      <option value="electricity">Electricity</option>
+      <option value="internet">Internet</option>
+      <option value="streamingServices">Streaming Services</option>
+      <option value="trash">Trash</option>
+      <option value="phone">Phone</option>
+      <option value="healthIn">Health Insurance</option>
+      <option value="lifeIn">Life Insurance</option>
+      <option value="autoIn">Auto Insurance</option>
+      <option value="gym">Gym</option>
+      <option value="grocery">Grocery</option>
+      <option value="miscellaneous">Miscellaneous</option>
+    </select>
 
-  <input
-    id="amount"
-    class="input column mb-2"
-    type="number"
-    placeholder="amount"/>
-  
-  <button class="button is-small is-primary column p-1"id="add-expense">Add Expense</button>
-</div>
-<div class="column level-item has-text-centered is-fullwidth-mobile">
-  <table class="table is-striped is-fullwidth">
-    <thead>Actual Expenses</thead>
-    <tr>
-      <th>Category</th>
-      <th>Amount</th>
-    </tr>
-    {{#each liabilities as |liability|}}
+    <input
+      id="amount"
+      class="input column mb-2"
+      type="number"
+      placeholder="amount"
+    />
+
+    <button class="button is-small is-primary column p-1" id="add-expense">Add
+      Expense</button>
+  </div>
+  <div class="column level-item has-text-centered is-fullwidth-mobile">
+    <table class="table is-striped">
+      <thead>Actual Expenses</thead>
       <tr>
-        <td>{{liability.category}}</td>
-        <td>{{liability.amount}}</td>
+        <th>Category</th>
+        <th>Amount</th>
       </tr>
-    {{/each}}
-  </table>
+      {{#each liabilities as |liability|}}
+        <tr>
+          <td>{{liability.category}}</td>
+          <td class="actual_expense">{{liability.amount}}</td>
+        </tr>
+      {{/each}}
+      <tfoot>
+        <td>Total</td>
+        <td id="total-amount"></td>
+      </tfoot>
+    </table>
+  </div>
 </div>
-</div>
-
-
-
 
 <script src="../../js/expenses.js"></script>

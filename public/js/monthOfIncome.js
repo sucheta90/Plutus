@@ -52,10 +52,7 @@ async function addIncome(e) {
   // Remove button
   const removeBtn = document.createElement("button");
   removeBtn.innerHTML = `Remove Item`;
-  removeBtn.setAttribute(
-    "class",
-    "remove-list-item  button is-danger is-small ml-3"
-  );
+  removeBtn.setAttribute("class", "remove-list-item  button is-small ml-3");
   removeBtn.addEventListener("click", handleDeleteIncome);
   list.appendChild(removeBtn);
 
@@ -71,6 +68,7 @@ function handleDeleteIncome(e) {
 
 document.getElementById("add").addEventListener("click", addIncome);
 
+// Saves each amount to database
 async function addToDataBase(e) {
   let listItem = this.parentElement;
   let name = listItem.firstChild.value.trim();
@@ -88,3 +86,14 @@ async function addToDataBase(e) {
     alert(response.statusText);
   }
 }
+
+(async function findTotal(e) {
+  let sum = 0;
+  const amountClass = await document.querySelectorAll(".actual_income");
+  for (let each of amountClass) {
+    console.log(parseInt(each.innerHTML));
+    sum += parseInt(each.innerHTML);
+  }
+  console.log(sum);
+  document.getElementById("total-amount").innerText = `$ ${sum}`;
+})();

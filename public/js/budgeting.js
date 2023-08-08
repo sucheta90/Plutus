@@ -17,3 +17,14 @@ async function addPlannedExpense() {
 document
   .getElementById("save-btn")
   .addEventListener("click", addPlannedExpense);
+
+(async function findTotal(e) {
+  let sum = 0;
+  const amountClass = await document.querySelectorAll(".limit_amount");
+  for (let each of amountClass) {
+    console.log(parseInt(each.innerHTML));
+    sum += parseInt(each.innerHTML);
+  }
+  console.log(sum);
+  document.getElementById("total-amount").innerText = `$ ${sum}`;
+})();
