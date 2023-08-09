@@ -44,17 +44,17 @@ async function addIncome(e) {
 
   // Add button to save to database
   const addBtn = document.createElement("button");
-  addBtn.innerHTML = `Add`;
+  addBtn.innerHTML = "Add";
   addBtn.setAttribute(
     "class",
-    "add-item  button has-background-link-light	 is-small ml-3",
+    "add-item  button has-background-link-light	 is-small ml-3"
   );
   addBtn.addEventListener("click", addToDataBase);
   list.appendChild(addBtn);
 
   // Remove button
   const removeBtn = document.createElement("button");
-  removeBtn.innerHTML = `Remove Item`;
+  removeBtn.innerHTML = "Remove Item";
   removeBtn.setAttribute("class", "remove-list-item  button is-small ml-3");
   removeBtn.addEventListener("click", handleDeleteIncome);
   list.appendChild(removeBtn);

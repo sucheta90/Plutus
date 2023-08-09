@@ -32,7 +32,7 @@ Budget.init(
     freezeTableName: true,
     underscored: true,
     modelName: "budget",
-  },
+  }
 );
 
 module.exports = Budget;

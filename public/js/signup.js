@@ -5,7 +5,7 @@ async function signupNewUser(event) {
   const password = document.getElementById("password-signup").value.trim();
 
   if (name && email && password) {
-    console.log(`inside signup`);
+    console.log("inside signup");
     const response = await fetch("/api/user/signup", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),

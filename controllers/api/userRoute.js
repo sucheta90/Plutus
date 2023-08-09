@@ -20,7 +20,7 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
-    console.log(`userData`, userData);
+    console.log("userData", userData);
     if (!userData) {
       res
         .status(400)

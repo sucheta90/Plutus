@@ -9,7 +9,7 @@ async function addTripExpense(event) {
   const amount = calculateAmount(quantity, unit_cost);
   console.log(amount);
   // Send fetch request to add a new trip
-  const response = await fetch(`/api/trip`, {
+  const response = await fetch("/api/trip", {
     method: "POST",
     body: JSON.stringify({
       description,

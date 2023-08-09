@@ -27,11 +27,11 @@ This was our groups first full stack application that we developed from scratch,
 
 Click (here) to visit the Plutus application or scan the QR code below: <br>
 <p align='center'>
-<a href='https://plutus-budgeting-ed67f205c52b.herokuapp.com/'><img src='./public/asset/PLUTUS.png' width="60%"/></a>
+<a href='https://plutus-budgeting-ed67f205c52b.herokuapp.com/'><img src='./public/asset/PLUTUS.png' width="40%"/></a>
 </p>
 
 <p align='center'>
-<a href='https://github.com/sucheta90/Plutus'><img src='./public/asset/Plutus_githubRepo.png' width="60%"/></a>
+<a href='https://github.com/sucheta90/Plutus'><img src='./public/asset/Plutus_githubRepo.png' width="40%"/></a>
 </p>
 
 

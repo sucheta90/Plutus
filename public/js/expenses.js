@@ -10,7 +10,7 @@ async function addExpense(e) {
   if (response.ok) {
     location.reload("/transaction/liabilities");
   } else {
-    alert(`Something went wrong!`);
+    alert("Something went wrong!");
   }
 }
 

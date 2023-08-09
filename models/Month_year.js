@@ -36,7 +36,7 @@ Asset.init(
     freezeTableName: true,
     underscored: true,
     modelName: "asset",
-  },
+  }
 );
 
 module.exports = Asset;

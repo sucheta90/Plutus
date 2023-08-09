@@ -10,7 +10,7 @@ async function addPlannedExpense() {
   if (response.ok) {
     location.reload("/budget");
   } else {
-    alert(`Something went wrong!`);
+    alert("Something went wrong!");
   }
 }
 

@@ -19,7 +19,7 @@ router.post("/asset", async (req, res) => {
 });
 router.post("/liabilities", async (req, res) => {
   try {
-    console.log(`inside post libilities`);
+    console.log("inside post libilities");
     const newExpense = await Liabilities.create({
       category: req.body.category,
       amount: req.body.amount,
