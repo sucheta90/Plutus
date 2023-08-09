@@ -1,25 +1,31 @@
 .green {
   background-color: green;
-
   padding: 3em;
 }
-.img-fig {
-  height: 90%;
+/* .logo {
+  width: 2em;
+} */
+#homepage {
+  background-image: url("/asset/homePageImage.jpg");
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
-.image {
-  width: 100%;
+.img-fig {
+  width: 50%;
+  margin: 0 auto;
 }
 .button {
   width: 100%;
 }
 
-.image-container {
-  /* padding: 2em; */
+/* .image-container {
+  
   height: 80%;
   width: auto;
   display: flex;
   justify-content: center;
-}
+} */
 .subtitle {
   width: 10em;
   margin: 0 auto;
