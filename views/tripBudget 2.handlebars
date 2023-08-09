@@ -1,0 +1,77 @@
+{{log trips}}
+<div class="columns">
+  <div class="column is-one-quarter">
+      {{> asideNav}}  
+    </div>
+<div class="container is-flex mt-3 p-3 is-justify-content-space-between">
+  {{! This is the header section of the dashboard }}
+
+
+</div>
+<section>
+<div id="highcharts-container"></div>
+<div class="container is-flex">
+  {{!-- {{> asideNav}} --}}
+  <div class=" container">
+    <h2 class="title is-5">Trip Budget</h2>
+    {{! This section will have all the charts }}
+    <div id="container" style="width:100%; height:400px;"></div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Unit Cost</th>
+          <th>Amount</th>
+          <th>X</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each trips as |trip|}}
+        <tr>
+          <td>{{trip.description}}</td>
+          <td>{{trip.category}}</td>
+          <td>{{trip.quantity}}</td>
+          <td>{{trip.unit_cost}}</td>
+          <td>{{trip.amount}}</td>
+          <td></td>
+        </tr>
+        {{/each}}
+        {{!-- Rows for inputting new trip expenses --}}
+        <tr>
+          <td><input type="text" id="description" name="description"></td>
+          <td><input type="text" id="category" name="type"></td>
+          <td><input type="text" id="quantity" name="quantity"></td>
+          <td><input type="text" id="unit-cost" name="unit-cost"></td>
+          <td><id="amount" name="amount"></td>
+          <td><button id="submit-trip">Submit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<script src="../js/tripBudget.js"></script>
+<script src="https://code.highcharts.com/gantt/modules/gantt.js"></script>
+<script src="../js/add-trip.js"></script>
+
+{{!-- <thead>
+  <tr>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Quantity</th>
+    <th>Unit Cost</th>
+    <th>Amount</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th>Flights</th>
+    <td>Transportation</td>
+    <td>2</td>
+    <td>600.00</td>
+    <td>1,200.00</td>
+  </tr>
+</tbody> --}}
