@@ -1,71 +1,108 @@
 # Plutus
 
-# Credits
-
-https://frontendshape.com/post/bulma-css-login-form-page-example
-
-https://frontendshape.com/post/bulma-css-registration-form-page-example
-
-# <Your-Project-Title>
+![plutus logo](./public/asset/Plutus-logos.jpeg)
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Plutus is an application that allows a registered user to get a clearer understanding of their personal finances. After the user inputs all of their income and expenses, Plutus will analyze the data and give a brief overview of the user's spending habits.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+We made this application because we felt it was a project that could provide value to many people who have trouble identifying where their money is going. Plutus helps the user on knowing where to start with accomplishing their finance goals.
 
-## Table of Contents (Optional)
+This was our groups first full stack application that we developed from scratch, thus we were able to utilize various technologies and concepts that helped further understanding such as:<br>
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+-Creating and populating databases with models<br>
+-Using handlebars to render template pages on the front end<br>
+-Utilizing tools on GitHub for project collaboration and management<br>
+
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Features](#features)
 - [Credits](#credits)
 - [License](#license)
+- [Badges](#badges)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Click (here) to visit the Plutus application or scan the QR code below: <br>
+
+<span style="color:red">*Insert heroku deployable link to Plutus*<br></span>
+
+
+![plutus qr code](./public/asset/Plutus_githubRepo.png)
+
+If you're a new user, click on "Sign Up".
+Provide the required information, which will include your name, email address, and password. <br>
+
+If you already have an account, click on "Login".
+Enter your registered email address and password.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Once logged in you will be presented with the Plutus dashboard - a quick breakdown of your income and expenses grouped by month. The navigation pane will allow you to access other sections of Plutus. These sections can be found in the Features part of the README
 
-## Credits
+<span style="color:red">Do we need screenshots here or in the features section?<br></span>
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
 ## Features
 
-If your project has a lot of features, list them here.
+<b>Budget:</b>
 
-## How to Contribute
+The Budget tab will allow you to plan out your expenses for a given month. Start by selecting a budget category from the dropdown list. Enter the corresponding cost of the category in the planned amount section and click Save.
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+Each selection you save will be added to a running total column on the right hand side and will allow you to quickly see your monthly expenses.
+
+---
+
+<b>Transactions:</b>
+
+The transactions tab will allow you to calculate your remaining balance for a given month. Transactions are broken down into two categories:
+
+-<b>Assets</b> are any form of monthly income that you would like to track, including but not limited to: paychecks from work, capital gains, alternative investments, etc. Click the Add more button to add an asset category and an amount. Each asset you save will be added to a running total column on the right hand side and will allow you to quickly see your total monthly income.
+
+-<b>Liabilities</b> are any expenses you incur in a given month. Categories are provided in the dropdown for planned bills, though you will be able to add additional variable expenses here as well. Each liability will also be added to a running total column on the right hand side.
+
+---
+
+<b>Emergency Funds: </b>
+
+<span style="color:red">Are we still using this section?<br></span></b>
+
+---
+
+<b>Trip Budget:</b>
+
+The Trip Budget tab will allow the user to add expenses for an upcoming trip. Add a trip expense and give it a category. Enter the number of instances for this cost in the quantity field, then add the cost per unit in the unit cost field. The total value of this will be calculated and presented in the Amount column. Continue to add trip expenses as needed.
+
+Once a trip expense has been added, a pie chart above will be generated. This chart will show a breakdown of all your trip expenses grouped together by category.
+
+## Credits
+
+SMU Coding Bootcamp
+
+[Sucheta Mukherjee](https://github.com/sucheta90)<br>
+[Brandon Forde](https://github.com/fordefam12)<br>
+[Shawn Bunch](https://github.com/shbunch)
+
+
+
+[Login form for Bulma framework](https://frontendshape.com/post/bulma-css-login-form-page-example)<br>
+
+[Signup form for Bulma framework](https://frontendshape.com/post/bulma-css-registration-form-page-example)<br>
+
+<span style="color:red">Any other credits here?<br></span>
+
+## License
+
+<span style="color:red">Do we need this<br></span>
+
+
+## Badges
+
+<span style="color:red">Do we need this<br></span>
+
+![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+
