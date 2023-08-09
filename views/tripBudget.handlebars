@@ -64,40 +64,41 @@
         <div class="content">
           <!-- Content -->
           <section class="section">
-              <div id="highcharts-container"></div>
+              <div class="table-container">
                <table class="table">
-      <thead>
-        <tr>
-          <th>Description</th>
-          <th>Category</th>
-          <th>Quantity</th>
-          <th>Unit Cost</th>
-          <th>Amount</th>
-          <th>X</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each trips as |trip|}}
-        <tr>
-          <td>{{trip.description}}</td>
-          <td>{{trip.category}}</td>
-          <td>{{trip.quantity}}</td>
-          <td>{{trip.unit_cost}}</td>
-          <td>{{trip.amount}}</td>
-          <td></td>
-        </tr>
-        {{/each}}
-        {{!-- Rows for inputting new trip expenses --}}
-        <tr>
-          <td><input type="text" id="description" name="description"></td>
-          <td><input type="text" id="category" name="type"></td>
-          <td><input type="text" id="quantity" name="quantity"></td>
-          <td><input type="text" id="unit-cost" name="unit-cost"></td>
-          <td><id="amount" name="amount"></td>
-          <td><button id="submit-trip">Submit</button></td>
-        </tr>
-      </tbody>
-    </table>
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th>Category</th>
+                      <th>Quantity</th>
+                      <th>Unit Cost</th>
+                      <th>Amount</th>
+                      <th>X</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                      {{#each trips as |trip|}}
+                      <tr>
+                        <td>{{trip.description}}</td>
+                        <td>{{trip.category}}</td>
+                        <td>{{trip.quantity}}</td>
+                        <td>{{trip.unit_cost}}</td>
+                        <td>{{trip.amount}}</td>
+                        <td></td>
+                      </tr>
+                      {{/each}}
+                      {{!-- Rows for inputting new trip expenses --}}
+                      <tr>
+                        <td><input type="text" id="description" name="description"></td>
+                        <td><input type="text" id="category" name="type"></td>
+                        <td><input type="text" id="quantity" name="quantity"></td>
+                        <td><input type="text" id="unit-cost" name="unit-cost"></td>
+                        <td><id="amount" name="amount"></td>
+                        <td><button id="submit-trip">Submit</button></td>
+                      </tr>
+                  </tbody>
+                </table>
+                </div>
           </section>
         </div>
       </article>

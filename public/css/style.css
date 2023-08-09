@@ -3,7 +3,9 @@
 
   padding: 3em;
 }
-
+.img-fig {
+  height: 90%;
+}
 .image {
   width: 100%;
 }
@@ -12,9 +14,11 @@
 }
 
 .image-container {
-  border: 1px solid red;
-  padding: 2em;
+  /* padding: 2em; */
   height: 80%;
+  width: auto;
+  display: flex;
+  justify-content: center;
 }
 .subtitle {
   width: 10em;
