@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection");
-const { Trip } = require("../models");
+const { Trip, Liabilities, Budget, Asset } = require("../models");
 
 const tripSeedData = require("./trip.json");
 

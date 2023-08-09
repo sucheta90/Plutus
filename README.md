@@ -1,6 +1,7 @@
 # Plutus
-
-![plutus logo](./public/asset/Plutus-logos.jpeg)
+<p align='center'>
+<img src='./public/asset/Plutus-logos.jpeg' width='80%'/>
+</p>
 
 ## Description
 
@@ -10,9 +11,9 @@ We made this application because we felt it was a project that could provide val
 
 This was our groups first full stack application that we developed from scratch, thus we were able to utilize various technologies and concepts that helped further understanding such as:<br>
 
--Creating and populating databases with models<br>
--Using handlebars to render template pages on the front end<br>
--Utilizing tools on GitHub for project collaboration and management<br>
+- Creating and populating databases with models<br>
+- Using handlebars to render template pages on the front end<br>
+- Utilizing tools on GitHub for project collaboration and management<br>
 
 ## Table of Contents
 
@@ -26,10 +27,14 @@ This was our groups first full stack application that we developed from scratch,
 ## Installation
 
 Click (here) to visit the Plutus application or scan the QR code below: <br>
+<p align='center'>
+<a href='https://plutus-budgeting-ed67f205c52b.herokuapp.com/'><img src='./public/asset/PLUTUS.png' width="60%"/><a>
+</p>
 
-<span style="color:red">_Insert heroku deployable link to Plutus_<br></span>
+<p align='center'>
+<a href='https://github.com/sucheta90/Plutus'><img src='./public/asset/Plutus_githubRepo.png' width="60%"/><a>
+</p>
 
-![plutus qr code](./public/asset/Plutus_githubRepo.png)
 
 If you're a new user, click on "Sign Up".
 Provide the required information, which will include your name, email address, and password. <br>
@@ -41,7 +46,9 @@ Enter your registered email address and password.
 
 Once logged in you will be presented with the Plutus dashboard - a quick breakdown of your income and expenses grouped by month. The navigation pane will allow you to access other sections of Plutus. These sections can be found in the Features part of the README
 
-<span style="color:red">Do we need screenshots here or in the features section?<br></span>
+<img src='./public/asset/homepageSrn.png'/>
+<img src='./public/asset/userLogin.png'/>
+<img src='./public/asset/userSignup.png'/>
 
 ## Features
 
@@ -63,11 +70,9 @@ The transactions tab will allow you to calculate your remaining balance for a gi
 
 ---
 
-<b>Emergency Funds: </b>
 
-<span style="color:red">Are we still using this section?<br></span></b>
 
----
+
 
 <b>Trip Budget:</b>
 
@@ -79,22 +84,19 @@ Once a trip expense has been added, a pie chart above will be generated. This ch
 
 SMU Coding Bootcamp
 
-[Sucheta Mukherjee](https://github.com/sucheta90)<br>
-[Brandon Forde](https://github.com/fordefam12)<br>
+[Sucheta Mukherjee](https://github.com/sucheta90)
+<br>
+[Brandon Forde](https://github.com/fordefam12)
+<br>
 [Shawn Bunch](https://github.com/shbunch)
 
 [Login form for Bulma framework](https://frontendshape.com/post/bulma-css-login-form-page-example)<br>
 
 [Signup form for Bulma framework](https://frontendshape.com/post/bulma-css-registration-form-page-example)<br>
 
-<span style="color:red">Any other credits here?<br></span>
+[Background Image](https://unsplash.com/photos/SoT4-mZhyhE)
 
-## License
+[Pie Charts](https://www.highcharts.com/demo#highcharts-demo-pie-charts)
 
-<span style="color:red">Do we need this<br></span>
 
-## Badges
 
-<span style="color:red">Do we need this<br></span>
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)

@@ -2,14 +2,17 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const budgetTotal = parseFloat(
-    document.getElementById("budgetTotal").textContent,
+    document.getElementById("budgetTotal").textContent
   );
   const assetTotal = parseFloat(
-    document.getElementById("assetTotal").textContent,
+    document.getElementById("assetTotal").textContent
   );
   const liabilitiesTotal = parseFloat(
-    document.getElementById("liabilitiesTotal").textContent,
+    document.getElementById("liabilitiesTotal").textContent
   );
+
+  const savings = assetTotal - liabilitiesTotal;
+
   Highcharts.chart("high-container", {
     chart: {
       type: "pie",
@@ -43,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data: [
           ["total income", assetTotal],
           ["total expenses", liabilitiesTotal],
-          ["savings", budgetTotal],
+          ["savings", savings],
         ],
       },
     ],

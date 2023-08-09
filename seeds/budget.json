@@ -1,0 +1,20 @@
+[
+    {
+      "category": "Electricity",
+      "amount": 250
+    },
+    {
+      "category": "Water",
+      "amount": 100
+    },
+    {
+      "category": "Trash",
+      "amount": 50
+    },
+    {
+      "category": "Miscellaneous",
+      "amount": 1000
+    }
+    
+  ]
+  

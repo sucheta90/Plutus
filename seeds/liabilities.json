@@ -1,16 +1,19 @@
 [
   {
-    "description": "Flights",
-    "category": "Transportation",
-    "quantity": "2",
-    "unit_cost": "600.00",
-    "amount": "1200.00"
+    "category": "Electricity",
+    "amount": 250
   },
   {
-    "description": "Hotel",
-    "category": "Lodging",
-    "quantity": "5",
-    "unit_cost": "120.00",
-    "amount": "600.00"
+    "category": "Water",
+    "amount": 100
+  },
+  {
+    "category": "Trash",
+    "amount": 50
+  },
+  {
+    "category": "Miscellaneous",
+    "amount": 1000
   }
+  
 ]
