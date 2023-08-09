@@ -49,7 +49,7 @@ Expense.init(
     freezeTableName: true,
     underscored: true,
     modelName: "expense",
-  }
+  },
 );
 
 module.exports = Expense;

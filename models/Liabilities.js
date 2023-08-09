@@ -37,7 +37,7 @@ Liabilities.init(
     freezeTableName: true,
     underscored: true,
     modelName: "liabilities",
-  }
+  },
 );
 
 module.exports = Liabilities;

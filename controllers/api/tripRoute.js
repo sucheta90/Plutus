@@ -6,17 +6,16 @@ router.post("/", async (req, res) => {
     console.log(req.body);
     const tripItem = await Trip.create(req.body, {
       // TODO Insert User ID somehow so it shows up as NOT null in trip table
-    })
-    tripItem.user_id = req.session.user_id
+    });
+    tripItem.user_id = req.session.user_id;
     if (!tripItem) {
-      res.status(400).json("Something went wrong..")
+      res.status(400).json("Something went wrong..");
       return;
     }
-    res.status(200).json("Success!!")
-  }
-  catch (err) {
+    res.status(200).json("Success!!");
+  } catch (err) {
     console.log(err);
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 router.put("/:id", (req, res) => {
@@ -26,19 +25,16 @@ router.delete("/:id", (req, res) => {
   res.json("You have reached the delete route in /trip");
 });
 
-
-
 router.get("/", async (req, res) => {
   try {
-    const trips = await Trip.findAll({})
+    const trips = await Trip.findAll({});
     if (!trips) {
-      res.status(400).json("Something went wrong..")
+      res.status(400).json("Something went wrong..");
       return;
     }
-    res.status(200).json(trips)
-  }
-  catch (err) {
-    res.status(500).json(err)
+    res.status(200).json(trips);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 module.exports = router;

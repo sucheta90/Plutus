@@ -27,8 +27,7 @@ This was our groups first full stack application that we developed from scratch,
 
 Click (here) to visit the Plutus application or scan the QR code below: <br>
 
-<span style="color:red">*Insert heroku deployable link to Plutus*<br></span>
-
+<span style="color:red">_Insert heroku deployable link to Plutus_<br></span>
 
 ![plutus qr code](./public/asset/Plutus_githubRepo.png)
 
@@ -40,12 +39,9 @@ Enter your registered email address and password.
 
 ## Usage
 
-
-
 Once logged in you will be presented with the Plutus dashboard - a quick breakdown of your income and expenses grouped by month. The navigation pane will allow you to access other sections of Plutus. These sections can be found in the Features part of the README
 
 <span style="color:red">Do we need screenshots here or in the features section?<br></span>
-
 
 ## Features
 
@@ -87,8 +83,6 @@ SMU Coding Bootcamp
 [Brandon Forde](https://github.com/fordefam12)<br>
 [Shawn Bunch](https://github.com/shbunch)
 
-
-
 [Login form for Bulma framework](https://frontendshape.com/post/bulma-css-login-form-page-example)<br>
 
 [Signup form for Bulma framework](https://frontendshape.com/post/bulma-css-registration-form-page-example)<br>
@@ -99,10 +93,8 @@ SMU Coding Bootcamp
 
 <span style="color:red">Do we need this<br></span>
 
-
 ## Badges
 
 <span style="color:red">Do we need this<br></span>
 
 ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
