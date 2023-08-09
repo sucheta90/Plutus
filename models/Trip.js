@@ -51,7 +51,7 @@ Trip.init(
     freezeTableName: true,
     underscored: true,
     modelName: "trip",
-  }
+  },
 );
 
 module.exports = Trip;

@@ -1,17 +1,43 @@
-
-<div class="tile is-ancestor has-background-primary-light">
+{{!-- <div class="tile is-ancestor has-background-primary-light">
   <div class="tile home-image">
     <image src="./asset/homePageImage.jpg" class="column image" />
   </div>
-   <div class="tile is-vertical green">
-       <figure class="image img-fig">
-          <image src="./asset/Plutus-logos_transparent.png"/>
-          
-        </figure>
+  <div class="tile is-vertical green">
+    <figure class="image img-fig">
+      <image src="./asset/Plutus-logos_transparent.png" />
+
+    </figure>
     <p class="subtitle">
       <a href="/login" class="button m-3">Login</a>
-      <a href="/signup" class="button">Sign Up</button></a>
+      <a href="/signup" class="button">Sign Up</a>
     </p>
-   </div>
+  </div>
+</div> --}}
+<div class="hero is-fullheight is-hidden-mobile	" id="homepage" >
+   <form class="is-flex is-flex-direction-column is-justify-content-center is-align-content-center	">
+    <figure class="image img-fig">
+      <image src="./asset/Plutus-logos_transparent.png" class="logo" />
+    </figure>
+    <p class="subtitle pb-3">
+
+      <a href="/login" class="button m-3">Login</a>
+      <a href="/signup" class="button">Sign Up</a>
+    </p>
+   </form>
 </div>
+
+<div class="hero is-fullheight is-hidden-desktop" id="homepage">
+<form >
+  <figure class="image">
+      <image src="./asset/Plutus-logos_transparent.png" class="logo" />
+    </figure>
+    <p class="subtitle pb-3">
+      <a href="/login" class="button m-3">Login</a>
+      <a href="/signup" class="button">Sign Up</a>
+    </p>
+</form>
+</div>
+
+
+
 <script src="../js/homepage.js"></script>

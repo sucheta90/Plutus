@@ -47,7 +47,7 @@ async function addIncome(e) {
   addBtn.innerHTML = `Add`;
   addBtn.setAttribute(
     "class",
-    "add-item  button has-background-link-light	 is-small ml-3"
+    "add-item  button has-background-link-light	 is-small ml-3",
   );
   addBtn.addEventListener("click", addToDataBase);
   list.appendChild(addBtn);

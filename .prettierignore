@@ -1,0 +1,12 @@
+*.md
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+{{! prettier-ignore }}
+{{> asideNav}}
+
+
+# Ignore all HTML files:
+**/*.handlebars

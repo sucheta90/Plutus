@@ -47,11 +47,11 @@ router.get("/dashboard", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
     console.log(user);
     const budgetArr = user.budgets.map((budget) =>
-      parseFloat(budget.limit_amount)
+      parseFloat(budget.limit_amount),
     );
     const assetArr = user.assets.map((asset) => parseFloat(asset.amount));
     const liabilitiesArr = user.liabilities.map((liability) =>
-      parseFloat(liability.amount)
+      parseFloat(liability.amount),
     );
     const budgetTotal = budgetArr.reduce((a, b) => a + b, 0);
     const assetTotal = assetArr.reduce((a, b) => a + b, 0);
