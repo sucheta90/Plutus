@@ -1,42 +1,80 @@
-<div class="columns mt-5">
-  <div class="column is-one-quarter">
-      {{> asideNav}}  
+  
+<div class="dashboard is-full-height">
+  
+  
+  <!-- main section -->
+  <div class="dashboard-main is-scrollable">
+    <nav class="navbar m-3">
+      <div class="navbar-brand">
+        <div>
+      <img src="../asset/Plutus-logos.jpeg" alt="" class="image is-96x96">
     </div>
-  <div class="column is-one-third-desktop">
-    {{!-- {{> asideNav}} --}}
+        <span class="navbar-item">
+           {{!-- <h3 class="">Hello, {{user.name}}! Welcome to Plutus.</h3> --}}
+        </span>
+      </div>
+    </nav>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-3">
+    <article class="tile is-child notification has-background-primary-light	">
+      <div class="content">
+        {{!-- <p class="title">PLUTUS</p> --}}
+        <p class="subtitle ">{{> asideNav}}</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </div>
+    </article>
   </div>
-  <section class="column p-5">
-    <h1 class="is-size-5">Assets</h1>
-    <p class="">Enter your monthly paychecks and other regular income.</p>
+  <div class="tile is-vertical is-8 ">
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-success		">
+        <p class="title has-text-light">The Assets (Income)</p>
+        <p class="subtitle is-size-6 has-text-light">Enter your monthly paychecks and other regular income.</p>
+        <div class="content">
+          <!-- Content -->
+             <section class="column p-5">
 
-    <h4 class="mb-2">Income for <span id="month-of-income"></span></h4>
-    {{! <form class"assets-form">  }}
-    <button id="add" class="mb-2 button is-primary is-small">Add more +</button>
-    <ul class="income-list mb-5">
-      {{! get's list items }}
-    </ul>
-  </section>
-  <div class="column level-item has-text-centered is-mobile">
-    <table class="table is-striped is-fullwidth">
-      <thead>Assets</thead>
-      <tr>
-        <th>Categoty</th>
-        <th>Amount</th>
-      </tr>
-      {{#each assets as |asset|}}
-        <tr>
-          <td>{{asset.name}}</td>
-          <td class="actual_income">{{asset.amount}}</td>
-        </tr>
-      {{/each}}
-      <tfoot>
-        <td>Total Income</td>
-        <td id="total-amount"></td>
-      </tfoot>
+              <h4 class="mb-2 has-text-light">Income for <span id="month-of-income" class="has-text-light"></span></h4>
+              {{! <form class"assets-form">  }}
+              <button id="add" class="mb-2 button has-background-success-light	 is-small">Add more +</button>
+              <ul class="income-list mb-5">
+                {{! get's list items }}
+              </ul>
+            </section>
+            </div>  
+      </article>
+    </div>
+    <div class="tile is-parent">
+        <article class="tile is-child notification has-background-link-dark	">
+          <p class="title has-text-light">Overview</p>
+          <p class="subtitle"></p>
+            <table class="table is-striped is-fullwidth">
+              <thead class="has-text-light"></thead>
+              <tr>
+                <th>Categoty</th>
+                <th>Amount</th>
+              </tr>
+              {{#each assets as |asset|}}
+                <tr>
+                  <td>{{asset.name}}</td>
+                  <td class="actual_income">{{asset.amount}}</td>
+                </tr>
+              {{/each}}
+              <tfoot>
+              <td>Total Income</td>
+              <td id="total-amount"></td>
+            </tfoot>
     </table>
+        </article>
+      </div>
   </div>
-
+  
+  
 </div>
+
+    
+
 
 <script src="../../js/monthOfIncome.js"></script>
 

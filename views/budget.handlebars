@@ -1,53 +1,82 @@
-<div>
-<div class="columns tile is-ancestor is-inline">
-  <div class="column is-2 is-mobile is-parent">
-      {{> asideNav}}  
-    </div>
-</div>
-  <div class="is-mobile tile is-4 is-parent ">
-    <h2 class="title is-5 is-child notification ">Budget Planner</h2>
-    <div class="">
-      <table class="table is-2  is-striped is-mobile is-justify-content-space-around">
-        <thead>
-          <th>
-            Planned Bills and Subscriptions
-          </th>
-        </thead>
-        <tr>
-          <th>Category</th>
-          <th>Planned Amount</th>
-          <th></th>
-        </tr>
-        <tr class="">
-          <td>
-            <select class="select p-1 category is-12">
 
-              <option value="mortgage">Mortgage/Rent</option>
-              <option value="water">Water</option>
-              <option value="naturalGas">Natual Gas</option>
-              <option value="electricity">Electricity</option>
-              <option value="internet">Internet</option>
-              <option value="streamingServices">Streaming Services</option>
-              <option value="trash">Trash</option>
-              <option value="phone">Phone</option>
-              <option value="healthIn">Health Insurance</option>
-              <option value="lifeIn">Life Insurance</option>
-              <option value="autoIn">Auto Insurance</option>
-              <option value="gym">Gym</option>
-              <option value="grocery">Grocery</option>
-              <option value="miscellaneous">Miscellaneous</option>
+  <div class="dashboard is-full-height">
+  
+  
+  <!-- main section -->
+  <div class="dashboard-main is-scrollable">
+    <nav class="navbar m-3">
+      <div class="navbar-brand">
+        <div>
+      <img src="../asset/Plutus-logos.jpeg" alt="" class="image is-96x96">
+    </div>
+        <span class="navbar-item">
+           {{!-- <h3 class="">Hello, {{user.name}}! Welcome to Plutus.</h3> --}}
+        </span>
+      </div>
+    </nav>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-3">
+    <article class="tile is-child notification has-background-primary-light	">
+      <div class="content">
+        {{!-- <p class="title">PLUTUS</p> --}}
+        <p class="subtitle ">{{> asideNav}}</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="tile is-vertical is-8 ">
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-success		">
+        <p class="title has-text-light">The Budget Planner</p>
+        <p class="subtitle is-size-6 has-text-light">Planned Bills and Subscriptions</p>
+        <div class="content columns is-desktop">
+          <!-- Content -->
+           
+           <span class="column">
+            <div class="select">
+            <select class=" category ">
+
+              <option value="Mortgage">Mortgage/Rent</option>
+              <option value="Water">Water</option>
+              <option value="Natual Gas">Natual Gas</option>
+              <option value="Electricity">Electricity</option>
+              <option value="Internet">Internet</option>
+              <option value="Streaming Services">Streaming Services</option>
+              <option value="Trash">Trash</option>
+              <option value="Phone">Phone</option>
+              <option value="Health Insurance">Health Insurance</option>
+              <option value="Life Insurance">Life Insurance</option>
+              <option value="Auto Insurance">Auto Insurance</option>
+              <option value="Gym">Gym</option>
+              <option value="Grocery">Grocery</option>
+              <option value="Miscellaneous">Miscellaneous</option>
             </select>
-          </td>
-          <td>
+            </div>
+           </span>
+           
+            
+          <span class="column p-0">
             <input type="number" placeholder="planned" class="amount input" />
-          </td>
-          <td>
-            <button class="button is-primary" id="save-btn">Save</button>
-          </td>
-        </tr>
-      </table>
-      <div class="is-flex is-justify-content-center">
-        <table class="table is-striped">
+          </span>
+          
+            
+          
+          <span class="column">
+            <button class="button has-background-grey-lighter is-text-light	" id="save-btn">Save</button>
+          </span>
+       
+        </div>
+          
+        
+      </article>
+    </div>
+    <div class="tile is-parent">
+        <article class="tile is-child notification has-background-link-dark	">
+          <p class="title has-text-light">Overview</p>
+          <p class="subtitle"></p>
+          <table class="table is-striped is-fullwidth">
           <tr>
             <th>Category</th>
             <th>Planned</th>
@@ -64,10 +93,29 @@
             <td id="total-amount"></td>
           </tfoot>
         </table>
-
+        </article>
       </div>
-
-    </div>
   </div>
+  
+  
 </div>
+
+    
+    
+
+    <!-- the footer will take up all unused space at the bottom -->
+    
+  </div>
+  </div>
+  
+
+
+
+  
+
+
+
+
+
+
 <script src="../js/budgeting.js"></script>

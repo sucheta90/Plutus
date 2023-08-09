@@ -45,7 +45,10 @@ async function addIncome(e) {
   // Add button to save to database
   const addBtn = document.createElement("button");
   addBtn.innerHTML = `Add`;
-  addBtn.setAttribute("class", "add-item  button is-primary is-small ml-3");
+  addBtn.setAttribute(
+    "class",
+    "add-item  button has-background-link-light	 is-small ml-3"
+  );
   addBtn.addEventListener("click", addToDataBase);
   list.appendChild(addBtn);
 
@@ -91,20 +94,8 @@ async function addToDataBase(e) {
   let sum = 0;
   const amountClass = await document.querySelectorAll(".actual_income");
   for (let each of amountClass) {
-    console.log(parseInt(each.innerHTML));
     sum += parseInt(each.innerHTML);
   }
-  console.log(sum);
+
   document.getElementById("total-amount").innerText = `$ ${sum}`;
 })();
-<<<<<<< HEAD
-export async function findTotal() {
-  let sum = 0;
-  const amountClass = await document.querySelectorAll(".actual_income");
-  for (let each of amountClass) {
-    sum += parseInt(each.innerHTML);
-  }
-  return sum;
-}
-=======
->>>>>>> f1fbf3cdfbe82fa657c0e9420b63402f0e05f7f7

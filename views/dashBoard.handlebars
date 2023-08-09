@@ -1,35 +1,65 @@
-{{log this}}
-
-<div class="container is-flex mt-3 p-3 is-justify-content-space-between">
-  {{! This is the header section of the dashboard }}
-  <h2 class="title is-5">Hello, {{user.name}}!</h2>
-  <h3>Welcome to Plutus.</h3>
-</div>
-<div class="container is-flex">
-  {{!-- {{> asideNav}} --}}
-  <div class="container">
-    <h2 class="title is-4 box">The Dashboard</h2>
-    {{! This section will have all the charts }}
-    
-    
+  <div class="dashboard is-full-height ">
+  
+  
+  <!-- main section -->
+  <div class="dashboard-main is-scrollable">
+    <nav class="navbar m-3">
+      <div class="navbar-brand">
+        <div>
+      <img src="../asset/Plutus-logos.jpeg" alt="" class="image is-96x96">
+    </div>
+        <span class="navbar-item">
+           <h3 class="">Hello, {{user.name}}! Welcome to Plutus.</h3>
+        </span>
+      </div>
+    </nav>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-3">
+    <article class="tile is-child notification has-background-primary-light	">
+      <div class="content">
+        {{!-- <p class="title">PLUTUS</p> --}}
+        <p class="subtitle"></p>
+        <div class="content">
+          <!-- Content -->
+          {{> asideNav}}
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="tile is-vertical is-8">
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-success		">
+        <p class="title has-text-light">The Dashboar</p>
+        <p class="subtitle"></p>
+        <div class="content">
+          <!-- Content -->
+          <section class="section">
+      <div class="column notification is-mobile is-three-quarters" id="high-container" style="width:100%; height:400px;"></div>
+      </div>
+        <figure class="is-center is-hidden">
+          <p id="budgetTotal">{{budgetTotal}}</p>
+          <p id="assetTotal">{{assetTotal}}</p>
+          <p id="liabilitiesTotal">{{liabilitiesTotal}}</p>
+      </figure>
+    </div>
+    </section>
+        </div>
+      </article>
+    </div>
   </div>
   
+  
 </div>
-<div class="columns">
-  <div class="column is-one-quarter">
-      {{> asideNav}}  
-    </div>
-    <section id="totalAsset">
 
-</section>
-<div class="column notification is-mobile is-three-quarters" id="high-container" style="width:100%; height:400px;"></div>
-  </div>
-  <figure class="is-center is-hidden">
-<p id="budgetTotal">{{budgetTotal}}</p>
-<p id="assetTotal">{{assetTotal}}</p>
-<p id="liabilitiesTotal">{{liabilitiesTotal}}</p>
-</figure>
-</div>
+    
+    
+
+  
+
+
+
+  
+
 
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script src="../js/dashboard.js"></script>

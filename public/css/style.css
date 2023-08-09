@@ -1,7 +1,9 @@
-.homepage {
-  background-color: hsl(141, 73%, 41%);
-  height: 100%;
+.green {
+  background-color: green;
+
+  padding: 3em;
 }
+
 .image {
   width: 100%;
 }
@@ -10,8 +12,9 @@
 }
 
 .image-container {
-  width: 10em;
-  margin: 0 auto;
+  border: 1px solid red;
+  padding: 2em;
+  height: 80%;
 }
 .subtitle {
   width: 10em;
@@ -23,4 +26,10 @@
 }
 h2 {
   text-align: center;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
 }

@@ -1,22 +1,71 @@
-{{log trips}}
-<div class="columns">
-  <div class="column is-one-quarter">
-      {{> asideNav}}  
-    </div>
-<div class="container is-flex mt-3 p-3 is-justify-content-space-between">
-  {{! This is the header section of the dashboard }}
 
 
-</div>
-<section>
-<div id="highcharts-container"></div>
-<div class="container is-flex">
-  {{!-- {{> asideNav}} --}}
+
+
+
   <div class=" container">
-    <h2 class="title is-5">Trip Budget</h2>
+    
     {{! This section will have all the charts }}
-    <div id="container" style="width:100%; height:400px;"></div>
-    <table class="table">
+    
+   
+  </div>
+
+
+
+
+
+
+
+ <div class="dashboard is-full-height">
+  
+  
+  <!-- main section -->
+  <div class="dashboard-main is-scrollable">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <div>
+      <img src="../asset/Plutus-logos.jpeg" alt="" class="image is-96x96">
+    </div>
+        <span class="navbar-item">
+          
+        </span>
+      </div>
+    </nav>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-3">
+    <article class="tile is-child notification has-background-primary-light	">
+      <div class="content">
+        {{!-- <p class="title">PLUTUS</p> --}}
+        <p class="subtitle "></p>
+        <div class="content">
+          <!-- Content -->
+          {{> asideNav}}
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="tile is-vertical is-8">
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-success		">
+        <p class="title has-text-light">Trip Budget</p>
+        <p class="subtitle"></p>
+        <div class="content">
+          <!-- Content -->
+          <section class="section">
+             <div id="container" style="width:100%; height:400px;"></div>
+          </section>
+        </div>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-info		">
+        <p class="title has-text-light"></p>
+        <p class="subtitle"></p>
+        <div class="content">
+          <!-- Content -->
+          <section class="section">
+              <div id="highcharts-container"></div>
+               <table class="table">
       <thead>
         <tr>
           <th>Description</th>
@@ -49,29 +98,17 @@
         </tr>
       </tbody>
     </table>
+          </section>
+        </div>
+      </article>
+    </div>
   </div>
-</div>
+  
+  
 </div>
 
 <script src="../js/tripBudget.js"></script>
 <script src="https://code.highcharts.com/gantt/modules/gantt.js"></script>
 <script src="../js/add-trip.js"></script>
 
-{{!-- <thead>
-  <tr>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Quantity</th>
-    <th>Unit Cost</th>
-    <th>Amount</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <th>Flights</th>
-    <td>Transportation</td>
-    <td>2</td>
-    <td>600.00</td>
-    <td>1,200.00</td>
-  </tr>
-</tbody> --}}
+

@@ -1,42 +1,86 @@
-<div class="columns is-desktop mt-5">
-  <div class="column is-one-quarter">
-      {{> asideNav}}  
+<div class="dashboard is-full-height">
+  <!-- main section -->
+  <div class="dashboard-main is-scrollable">
+    <nav class="navbar m-3">
+      <div class="navbar-brand">
+        <div>
+      <img src="../asset/Plutus-logos.jpeg" alt="" class="image is-96x96">
     </div>
-  <section class="column is-one-third-desktop">
-    {{!-- {{> asideNav}} --}}
-  </section>
-  <div class="column p-5 is-fullwidth-mobile">
-    <select class="select column p-1 mb-2 category" id="test">
-      Bills and Subscriptions
-      <option value="mortgage">Mortgage/Rent</option>
-      <option value="water">Water</option>
-      <option value="naturalGas">Natual Gas</option>
-      <option value="electricity">Electricity</option>
-      <option value="internet">Internet</option>
-      <option value="streamingServices">Streaming Services</option>
-      <option value="trash">Trash</option>
-      <option value="phone">Phone</option>
-      <option value="healthIn">Health Insurance</option>
-      <option value="lifeIn">Life Insurance</option>
-      <option value="autoIn">Auto Insurance</option>
-      <option value="gym">Gym</option>
-      <option value="grocery">Grocery</option>
-      <option value="miscellaneous">Miscellaneous</option>
-    </select>
+        <span class="navbar-item">
+           {{!-- <h3 class="">Hello, {{user.name}}! Welcome to Plutus.</h3> --}}
+        </span>
+      </div>
+    </nav>
 
-    <input
-      id="amount"
-      class="input column mb-2"
-      type="number"
-      placeholder="amount"
-    />
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-3">
+          <article class="tile is-child notification has-background-primary-light	">
+            <div class="content">
+              {{!-- <p class="title">PLUTUS</p> --}}
+              <p class="subtitle "></p>
+              <div class="content">
+                <!-- Content -->
+                {{> asideNav}}
+              </div>
+            </div>
+          </article>
+     </div>
+  <div class="tile is-vertical is-8 ">
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-success		">
+        <p class="title has-text-light">The Liabilities (Actual Expenses)</p>
+        <p class="subtitle is-size-6 has-text-light">Bills and Subscriptions</p>
+        <div class="content columns is-desktop">
+          <!-- Content -->
+           
+           <span class="column">
+            <div class="select">
+            <select class="select column p-1 mb-2 category" id="test">
+              <option value="Mortgage">Mortgage/Rent</option>
+              <option value="Water">Water</option>
+              <option value="Natual Gas">Natual Gas</option>
+              <option value="Electricity">Electricity</option>
+              <option value="Internet">Internet</option>
+              <option value="Streaming Services">Streaming Services</option>
+              <option value="Trash">Trash</option>
+              <option value="Phone">Phone</option>
+              <option value="Health Insurance">Health Insurance</option>
+              <option value="Life Insurance">Life Insurance</option>
+              <option value="Auto Insurance">Auto Insurance</option>
+              <option value="Gym">Gym</option>
+              <option value="Grocery">Grocery</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            </div>
+           </span>
+           
+            
+          <span class="column">
+             <input
+                    id="amount"
+                    class="input column mb-2"
+                    type="number"
+                    placeholder="amount"
+                  />
 
-    <button class="button is-small is-primary column p-1" id="add-expense">Add
-      Expense</button>
-  </div>
-  <div class="column level-item has-text-centered is-fullwidth-mobile">
-    <table class="table is-striped">
-      <thead>Actual Expenses</thead>
+          </span>
+          
+            
+          
+          <span class="column">
+            <button class="button is-small is-primary column p-1" id="add-expense">Add Expense +</button>
+          </span>
+       
+        </div>
+          
+        
+      </article>
+    </div>
+    <div class="tile is-parent">
+        <article class="tile is-child notification has-background-link-dark	">
+          <p class="title has-text-light">Overview</p>
+          <p class="subtitle"></p>
+         <table class="table is-striped is-fullwidth">
       <tr>
         <th>Category</th>
         <th>Amount</th>
@@ -52,7 +96,20 @@
         <td id="total-amount"></td>
       </tfoot>
     </table>
+        </article>
+      </div>
   </div>
+  
+  
 </div>
+
+    
+    
+
+    
+    
+  
+
+  
 
 <script src="../../js/expenses.js"></script>
