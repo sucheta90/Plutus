@@ -25,14 +25,16 @@ This was our groups first full stack application that we developed from scratch,
 
 ## Installation
 
-Click (here) to visit the Plutus application or scan the QR code below: <br>
-<p align='center'>
+<!-- Click (here) to visit the Plutus application or scan the QR code below: <br> -->
+<!-- <p align='center'>
 <a href='https://plutus-budgeting-ed67f205c52b.herokuapp.com/'><img src='./public/asset/PLUTUS.png' width="40%"/></a>
-</p>
+</p> -->
 
-<p align='center'>
+<!-- <p align='center'>
 <a href='https://github.com/sucheta90/Plutus'><img src='./public/asset/Plutus_githubRepo.png' width="40%"/></a>
-</p>
+</p> -->
+
+- [PLUTUS](https://plutus-budgeting-ed67f205c52b.herokuapp.com/)
 
 
 If you're a new user, click on "Sign Up".
