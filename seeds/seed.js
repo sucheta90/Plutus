@@ -1,12 +1,17 @@
+/* eslint-disable quotes */
+
 const sequelize = require("../config/connection");
-const { Trip, Liabilities, Budget, Asset } = require("../models");
+const { Trip, Item } = require("../models");
 
 const tripSeedData = require("./trip.json");
+const itemSeedData = required("./item.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const trips = await Trip.bulkCreate(tripSeedData);
+
+  const items = await Item.bulkCreate(itemSeedData);
 
   process.exit(0);
 };

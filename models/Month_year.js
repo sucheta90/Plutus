@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Asset extends Model {}
+class MonthYear extends Model {}
 
 Asset.init(
   {
@@ -11,23 +11,13 @@ Asset.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    month: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    amount: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
-      validate: {
-        isDecimal: true,
-      },
-    },
-    user_id: {
+    year: {
       type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
+      allowNull: false,
     },
   },
   {
@@ -35,8 +25,8 @@ Asset.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "asset",
+    modelName: "monthYear",
   }
 );
 
-module.exports = Asset;
+module.exports = MonthYear;
