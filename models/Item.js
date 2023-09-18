@@ -1,32 +1,28 @@
+/* eslint-disable quotes */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class MonthYear extends Model {}
+class Item extends Model {}
 
-Asset.init(
+Item.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    month: {
+    description: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    year: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "monthYear",
+    modelName: "item",
   }
 );
 
-module.exports = MonthYear;
+module.exports = Item;

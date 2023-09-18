@@ -1,0 +1,46 @@
+[
+    {
+      "description": "Mortgage"
+      
+    },
+    {
+        "description": "Water"
+    },
+    {
+        "description": "Natural Gas"
+    },
+    {
+        "description": "Electricity"
+    },
+    {
+        "description": "Internet"
+    },
+    {
+        "description": "Streaming Services"
+    },
+    {
+        "description": "Trash"
+    },
+    {
+        "description": "Phone"
+    },
+    {
+        "description": "Health Insurance"
+    },
+    {
+        "description": "Life Insurance"
+    },
+    {
+        "description": "Auto Insurance"
+    },
+    {
+        "description": "Gym"
+    },
+    {
+        "description": "Grocery"
+    },
+    {
+        "description": "Miscellaneous"
+    }
+    
+  ]

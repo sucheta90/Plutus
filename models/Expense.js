@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -19,12 +20,11 @@ Expense.init(
         isDecimal: true,
       },
     },
-    budget_amount: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: true,
-      defaultValue: 0,
-      validate: {
-        isDecimal: true,
+    item_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "item",
+        key: "id",
       },
     },
     user_id: {
@@ -38,14 +38,10 @@ Expense.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    category_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "expense",

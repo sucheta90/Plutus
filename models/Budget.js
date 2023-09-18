@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -10,13 +11,27 @@ Budget.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    category: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+    item_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "item",
+        key: "id",
+      },
     },
-    limit_amount: {
+    month_year_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "month_year",
+        key: "id",
+      },
+    },
+    // budget amount
+    budget_amount: {
       type: DataTypes.DECIMAL,
       allowNull: false,
+    },
+    available_amount: {
+      type: DataTypes.INTEGER,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -28,7 +43,7 @@ Budget.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "budget",
