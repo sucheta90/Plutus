@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Asset, Liabilities, User } = require("../../models");
+const { Asset, Liabilities } = require("../../models");
 
 router.post("/asset", async (req, res) => {
   try {
@@ -23,7 +23,7 @@ router.post("/liabilities", async (req, res) => {
     const newExpense = await Liabilities.create({
       category: req.body.category,
       amount: req.body.amount,
-      user_id: req.session.user_id,
+      userId: req.session.user_id,
     });
     if (!newExpense) {
       res.status(400).json(err);

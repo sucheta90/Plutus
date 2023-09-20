@@ -75,7 +75,7 @@ router.get("/budget", withAuth, async (req, res) => {
   try {
     const budgetData = await Budget.findAll({
       where: {
-        user_id: req.session.user_id,
+        userId: req.session.user_id,
       },
     });
     const itemData = await Item.findAll();
@@ -110,7 +110,7 @@ router.get("/transaction/liabilities", withAuth, async (req, res) => {
   try {
     const allLiabilities = await Liabilities.findAll({
       where: {
-        user_id: req.session.user_id,
+        userId: req.session.user_id,
       },
     });
     const itemData = await Item.findAll();

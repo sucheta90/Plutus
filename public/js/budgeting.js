@@ -18,14 +18,15 @@ document
   .getElementById("save-btn")
   .addEventListener("click", addPlannedExpense);
 
+// eslint-disable-next-line no-unused-vars
 (async function findTotal(e) {
   let sum = 0;
-  const amountClass = await document.querySelectorAll(".limit_amount");
+  const amountClass = await document.querySelectorAll(".budget_amount");
   for (let each of amountClass) {
     console.log(parseInt(each.innerHTML));
     sum += parseInt(each.innerHTML);
   }
-  console.log(sum);
+  // console.log(sum);
   document.getElementById("total-amount").innerText = `$ ${sum}`;
 })();
 
