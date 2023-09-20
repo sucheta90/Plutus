@@ -33,27 +33,12 @@
         <p class="subtitle is-size-6 has-text-light">Planned Bills and Subscriptions</p>
         <div class="content columns is-desktop">
           <!-- Content -->
-           <span id="my-element">
+           {{!-- <span id="my-element">
 
-           </span>
+           </span> --}}
            <span class="column">
             <div class="select">
             <select class="category">
-
-              {{!-- <option value="Mortgage">Mortgage/Rent</option>
-              <option value="Water">Water</option>
-              <option value="Natual Gas">Natual Gas</option>
-              <option value="Electricity">Electricity</option>
-              <option value="Internet">Internet</option>
-              <option value="Streaming Services">Streaming Services</option>
-              <option value="Trash">Trash</option>
-              <option value="Phone">Phone</option>
-              <option value="Health Insurance">Health Insurance</option>
-              <option value="Life Insurance">Life Insurance</option>
-              <option value="Auto Insurance">Auto Insurance</option>
-              <option value="Gym">Gym</option>
-              <option value="Grocery">Grocery</option>
-              <option value="Miscellaneous">Miscellaneous</option> --}}
               {{#each items as |item|}}
               <option value={{item.description}}>{{item.description}}</option>
               {{/each}}
@@ -90,7 +75,7 @@
           {{#each budgets as |budget|}}
             <tr>
               <td>{{budget.category}}</td>
-              <td class="limit_amount">{{budget.limit_amount}} </td>
+              <td class="budget_amount">{{budget.budget_amount}} </td>
             </tr>
           {{/each}}
           <tfoot>
@@ -122,5 +107,5 @@
 
 
 
-<script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+{{!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> --}}
 <script src="../js/budgeting.js"></script>
