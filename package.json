@@ -23,6 +23,7 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "bulma": "^0.9.4",
+    "bulma-calendar": "^6.1.19",
     "bulma-dashboard": "^0.3.2",
     "bulma-fluent": "^0.4.3",
     "bulma-modal-fx": "^1.1.1",
@@ -42,8 +43,8 @@
   "devDependencies": {
     "eslint": "^8.46.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.28.0",
     "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.28.0",
     "prettier": "^2.1.2"
   }
 }

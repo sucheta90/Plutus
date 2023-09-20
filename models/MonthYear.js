@@ -1,9 +1,10 @@
+/* eslint-disable quotes */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class MonthYear extends Model {}
 
-Asset.init(
+MonthYear.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -22,7 +23,7 @@ Asset.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "monthYear",

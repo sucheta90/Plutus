@@ -36,7 +36,7 @@
            <span class="column">
             <div class="select">
             <select class="select column p-1 mb-2 category" id="test">
-              <option value="Mortgage">Mortgage/Rent</option>
+              {{!-- <option value="Mortgage">Mortgage/Rent</option>
               <option value="Water">Water</option>
               <option value="Natual Gas">Natual Gas</option>
               <option value="Electricity">Electricity</option>
@@ -49,7 +49,10 @@
               <option value="Auto Insurance">Auto Insurance</option>
               <option value="Gym">Gym</option>
               <option value="Grocery">Grocery</option>
-              <option value="Miscellaneous">Miscellaneous</option>
+              <option value="Miscellaneous">Miscellaneous</option> --}}
+              {{#each items as |item|}}
+              <option value={{item.description}}>{{item.description}}</option>
+              {{/each}}
             </select>
             </div>
            </span>

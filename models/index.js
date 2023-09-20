@@ -5,13 +5,16 @@ const Asset = require("./Asset");
 const Trip = require("./Trip");
 const Budget = require("./Budget");
 const Item = require("./Item");
+const MonthYear = require("./MonthYear");
 
 // Establishig the relationship
 User.hasMany(Liabilities);
 Liabilities.belongsTo(User);
 
-Budget.hasMany(Item);
-Liabilities.hasMany(Item);
+Item.hasMany(Budget);
+MonthYear.hasMany(Budget);
+Item.hasMany(Liabilities);
+MonthYear.hasMany(Liabilities);
 
 User.hasMany(Asset);
 Asset.belongsTo(User);
