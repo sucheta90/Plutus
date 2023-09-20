@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 

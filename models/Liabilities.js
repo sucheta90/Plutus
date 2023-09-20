@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -23,6 +24,13 @@ Liabilities.init(
         isDecimal: true,
       },
     },
+    month_year_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "monthYear",
+        key: "id",
+      },
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -33,7 +41,7 @@ Liabilities.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "liabilities",

@@ -35,13 +35,24 @@ Expense.init(
       },
     },
     month_year_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: "monthYear",
+        key: "id",
+      },
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      timestamps: true,
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      timestamps: true,
     },
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "expense",

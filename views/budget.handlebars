@@ -1,4 +1,4 @@
-
+ {{!-- {{log items}} --}}
   <div class="dashboard is-full-height">
   
   
@@ -33,12 +33,14 @@
         <p class="subtitle is-size-6 has-text-light">Planned Bills and Subscriptions</p>
         <div class="content columns is-desktop">
           <!-- Content -->
-           
+           <span id="my-element">
+
+           </span>
            <span class="column">
             <div class="select">
-            <select class=" category ">
+            <select class="category">
 
-              <option value="Mortgage">Mortgage/Rent</option>
+              {{!-- <option value="Mortgage">Mortgage/Rent</option>
               <option value="Water">Water</option>
               <option value="Natual Gas">Natual Gas</option>
               <option value="Electricity">Electricity</option>
@@ -51,7 +53,10 @@
               <option value="Auto Insurance">Auto Insurance</option>
               <option value="Gym">Gym</option>
               <option value="Grocery">Grocery</option>
-              <option value="Miscellaneous">Miscellaneous</option>
+              <option value="Miscellaneous">Miscellaneous</option> --}}
+              {{#each items as |item|}}
+              <option value={{item.description}}>{{item.description}}</option>
+              {{/each}}
             </select>
             </div>
            </span>
@@ -117,5 +122,5 @@
 
 
 
-
+<script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
 <script src="../js/budgeting.js"></script>

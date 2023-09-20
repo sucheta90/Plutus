@@ -1,6 +1,7 @@
+/* eslint-disable quotes */
 const router = require("express").Router();
-const { User, Asset, Liabilities, Trip, Budget } = require("../models");
-const { findAll, sequelize } = require("../models/User");
+const { User, Asset, Liabilities, Trip, Budget, Item } = require("../models");
+// const { findAll, sequelize } = require("../models/User");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -19,6 +20,7 @@ router.get("/login", async (req, res) => {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -45,7 +47,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-    console.log(user);
     const budgetArr = user.budgets.map((budget) =>
       parseFloat(budget.limit_amount)
     );
@@ -64,6 +65,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       liabilitiesTotal: liabilitiesTotal,
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -76,9 +78,11 @@ router.get("/budget", withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-
+    const itemData = await Item.findAll();
+    const items = itemData.map((each) => each.get({ pure: true }));
+    console.log(items);
     const budgets = budgetData.map((each) => each.get({ pure: true }));
-    res.render("budget", { budgets });
+    res.render("budget", { budgets, items });
     // res.render("budget");
   } catch (err) {
     res.status(500).json(err);
@@ -109,9 +113,12 @@ router.get("/transaction/liabilities", withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+    const itemData = await Item.findAll();
+    const items = itemData.map((each) => each.get({ pure: true }));
+    console.log(items);
     const liabilities = allLiabilities.map((each) => each.get({ pure: true }));
 
-    res.render("expenses", { liabilities });
+    res.render("expenses", { liabilities, items });
   } catch (err) {
     res.status(500).json(err);
   }

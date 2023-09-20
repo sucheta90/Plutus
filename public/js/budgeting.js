@@ -1,7 +1,7 @@
 async function addPlannedExpense() {
   const category = document.querySelector(".category").value;
   const amount = parseFloat(document.querySelector(".amount").value.trim());
-
+  console.log(amount);
   const response = await fetch("/api/budget", {
     method: "POST",
     body: JSON.stringify({ category, amount }),
@@ -28,3 +28,26 @@ document
   console.log(sum);
   document.getElementById("total-amount").innerText = `$ ${sum}`;
 })();
+
+// var calendars = new bulmaCalendar(".bulmaCalendar", {
+//   dateFormat: "dd.MM.yyyy", // 01.01.2021
+// });
+// // Initialize all input of type date
+// // var calendars = bulmaCalendar.attach('[type="date"]', options);
+
+// // Loop on each calendar initialized
+// for (var i = 0; i < calendars.length; i++) {
+//   // Add listener to select event
+//   calendars[i].on("select", (date) => {
+//     console.log(date);
+//   });
+// }
+
+// // To access to bulmaCalendar instance of an element
+// var element = document.querySelector("#my-element");
+// if (element) {
+//   // bulmaCalendar instance is available as element.bulmaCalendar
+//   element.bulmaCalendar.on("select", function (datepicker) {
+//     console.log(datepicker.data.value());
+//   });
+// }
