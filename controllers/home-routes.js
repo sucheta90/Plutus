@@ -77,11 +77,12 @@ router.get("/budget", withAuth, async (req, res) => {
       where: {
         userId: req.session.user_id,
       },
+      include: { model: Item },
     });
     const itemData = await Item.findAll();
     const items = itemData.map((each) => each.get({ pure: true }));
-    console.log(items);
-    const budgets = budgetData.map((each) => each.get({ pure: true }));
+    const budgets = budgetData.map((each) => each.get({ plain: true }));
+    console.log("LOG BUDGET", budgets);
     res.render("budget", { budgets, items });
     // res.render("budget");
   } catch (err) {
@@ -115,7 +116,6 @@ router.get("/transaction/liabilities", withAuth, async (req, res) => {
     });
     const itemData = await Item.findAll();
     const items = itemData.map((each) => each.get({ pure: true }));
-    console.log(items);
     const liabilities = allLiabilities.map((each) => each.get({ pure: true }));
 
     res.render("expenses", { liabilities, items });

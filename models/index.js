@@ -12,7 +12,10 @@ User.hasMany(Liabilities);
 Liabilities.belongsTo(User);
 
 Item.hasMany(Budget);
+Budget.belongsTo(Item);
 MonthYear.hasMany(Budget);
+Budget.belongsTo(MonthYear);
+
 Item.hasMany(Liabilities);
 MonthYear.hasMany(Liabilities);
 
