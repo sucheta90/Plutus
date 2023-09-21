@@ -24,20 +24,6 @@ Liabilities.init(
         isDecimal: true,
       },
     },
-    // month_year_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "monthYear",
-    //     key: "id",
-    //   },
-    // },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "user",
-    //     key: "id",
-    //   },
-    // },
   },
   {
     sequelize,
