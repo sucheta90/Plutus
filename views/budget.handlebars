@@ -74,7 +74,7 @@
           {{log this}}
           {{#each budgets as |budget|}}
             <tr>
-              <td>{{budget.category}}</td>
+              <td>{{budget.item.description}}</td>
               <td class="budget_amount">{{budget.budget_amount}} </td>
             </tr>
           {{/each}}
