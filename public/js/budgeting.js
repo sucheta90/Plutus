@@ -30,6 +30,17 @@ document
   document.getElementById("total-amount").innerText = `$ ${sum}`;
 })();
 
+// Initialize all input of type date
+var calendars = bulmaCalendar.attach('[type="date"]', options);
+
+// Loop on each calendar initialized
+for (var i = 0; i < calendars.length; i++) {
+  // Add listener to select event
+  calendars[i].on("select", (date) => {
+    console.log(date);
+  });
+}
+
 // var calendars = new bulmaCalendar(".bulmaCalendar", {
 //   dateFormat: "dd.MM.yyyy", // 01.01.2021
 // });
