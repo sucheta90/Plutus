@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Asset, Liabilities } = require("../../models");
+const { Asset, Liabilities, Item } = require("../../models");
 
 router.post("/asset", async (req, res) => {
   try {
@@ -19,9 +19,13 @@ router.post("/asset", async (req, res) => {
 });
 router.post("/liabilities", async (req, res) => {
   try {
-    console.log("inside post libilities");
+    const itemData = await Item.findOne({
+      where: { description: req.body.category },
+    });
+    const item = itemData.get({ plain: true });
+    console.log("EXPENSE ITEM", item);
     const newExpense = await Liabilities.create({
-      category: req.body.category,
+      itemId: item.id,
       amount: req.body.amount,
       userId: req.session.user_id,
     });
