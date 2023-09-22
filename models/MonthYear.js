@@ -23,6 +23,12 @@ MonthYear.init(
   },
   {
     sequelize,
+    indexes: [
+      {
+        unique: true,
+        fields: ["month", "year"],
+      },
+    ],
     timestamps: true,
     freezeTableName: true,
     underscored: true,

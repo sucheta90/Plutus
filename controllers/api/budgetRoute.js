@@ -3,12 +3,10 @@ const { Asset, Liabilities, User, Budget, Item } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.session.user_id);
     const itemData = await Item.findOne({
       where: { description: req.body.category },
     });
     const item = itemData.get({ plain: true });
-    // console.log(`ITEM :`, item);
     const newBudgetItem = await Budget.create({
       itemId: item.id,
       budget_amount: req.body.amount,

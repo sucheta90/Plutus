@@ -17,7 +17,9 @@ MonthYear.hasMany(Budget);
 Budget.belongsTo(MonthYear);
 
 Item.hasMany(Liabilities);
+Liabilities.belongsTo(Item);
 MonthYear.hasMany(Liabilities);
+Liabilities.belongsTo(MonthYear);
 
 User.hasMany(Asset);
 Asset.belongsTo(User);

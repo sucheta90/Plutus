@@ -1,7 +1,6 @@
 /* eslint-disable quotes */
 const router = require("express").Router();
 const { User, Asset, Liabilities, Trip, Budget, Item } = require("../models");
-// const { findAll, sequelize } = require("../models/User");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -113,10 +112,11 @@ router.get("/transaction/liabilities", withAuth, async (req, res) => {
       where: {
         userId: req.session.user_id,
       },
+      include: { model: Item },
     });
     const itemData = await Item.findAll();
     const items = itemData.map((each) => each.get({ pure: true }));
-    const liabilities = allLiabilities.map((each) => each.get({ pure: true }));
+    const liabilities = allLiabilities.map((each) => each.get({ plain: true }));
 
     res.render("expenses", { liabilities, items });
   } catch (err) {
