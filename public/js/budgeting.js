@@ -1,16 +1,24 @@
 async function addPlannedExpense() {
+  console.log("clicked from budget + save");
   const category = document.querySelector(".category").value;
   const amount = parseFloat(document.querySelector(".amount").value.trim());
-  console.log(amount);
+  const date = new Date(document.getElementById("monthYear").value);
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+
+  console.log("date", date);
+  console.log("year", year);
+  console.log("month", month);
   const response = await fetch("/api/budget", {
     method: "POST",
-    body: JSON.stringify({ category, amount }),
+    body: JSON.stringify({ category, amount, month, year }),
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    location.reload("/budget");
+    console.log(response);
+    // location.reload("/budget");
   } else {
-    alert("Something went wrong!");
+    alert("Something went wrong!", error);
   }
 }
 

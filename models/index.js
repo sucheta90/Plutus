@@ -30,4 +30,7 @@ Trip.belongsTo(User);
 User.hasMany(Budget);
 Budget.belongsTo(User);
 
+Budget.hasMany(Liabilities);
+Liabilities.belongsTo(Budget);
+
 module.exports = { User, Liabilities, Asset, Trip, Budget, Item, MonthYear };
