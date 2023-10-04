@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Asset, Liabilities, Item } = require("../../models");
+const { Asset, Liabilities, Item, MonthYear } = require("../../models");
 
 router.post("/asset", async (req, res) => {
   try {
@@ -22,12 +22,17 @@ router.post("/liabilities", async (req, res) => {
     const itemData = await Item.findOne({
       where: { description: req.body.category },
     });
+    const monthYearData = await MonthYear.findOne({
+      where: { month: req.body.month, year: req.body.year },
+    });
+    const monthYear = monthYearData.get({ plain: true });
     const item = itemData.get({ plain: true });
     console.log("EXPENSE ITEM", item);
     const newExpense = await Liabilities.create({
       itemId: item.id,
       amount: req.body.amount,
       userId: req.session.user_id,
+      monthYearId: monthYear.id,
     });
     if (!newExpense) {
       res.status(400).json(err);

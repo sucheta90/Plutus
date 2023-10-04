@@ -4,10 +4,6 @@ async function addPlannedExpense() {
   const date = new Date(document.getElementById("monthYear").value);
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
-
-  // console.log("date", date);
-  // console.log("year", year);
-  // console.log("month", month);
   const response = await fetch("/api/budget", {
     method: "POST",
     body: JSON.stringify({ category, amount, month, year }),
