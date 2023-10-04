@@ -11,12 +11,14 @@ router.post("/", async (req, res) => {
     });
     const monthYear = monthYearData.get({ plain: true });
     console.log("MONTHYEAR", monthYear);
+    console.log("monthYear Id", monthYear.id);
     const item = itemData.get({ plain: true });
+    console.log(item);
     const newBudgetItem = await Budget.create({
       itemId: item.id,
       budget_amount: req.body.amount,
       userId: req.session.user_id,
-      monthYear_id: monthYear.id,
+      monthYearId: monthYear.id,
     });
     console.log(`newBudgetItem ${newBudgetItem}`);
     //newBudgetItem.setUser(req.session.user_id);
