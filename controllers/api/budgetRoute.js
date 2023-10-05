@@ -1,16 +1,24 @@
 const router = require("express").Router();
-const { Budget, Item } = require("../../models");
+const { Budget, Item, MonthYear } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
     const itemData = await Item.findOne({
       where: { description: req.body.category },
     });
+    const monthYearData = await MonthYear.findOne({
+      where: { month: req.body.month, year: req.body.year },
+    });
+    const monthYear = monthYearData.get({ plain: true });
+    console.log("MONTHYEAR", monthYear);
+    console.log("monthYear Id", monthYear.id);
     const item = itemData.get({ plain: true });
+    console.log(item);
     const newBudgetItem = await Budget.create({
       itemId: item.id,
       budget_amount: req.body.amount,
       userId: req.session.user_id,
+      monthYearId: monthYear.id,
     });
     console.log(`newBudgetItem ${newBudgetItem}`);
     //newBudgetItem.setUser(req.session.user_id);
