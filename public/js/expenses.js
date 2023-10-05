@@ -10,7 +10,7 @@ async function addExpense(e) {
   const amount = parseFloat(document.getElementById("amount").value.trim());
   const monthYear = document.getElementById("monthYear").value;
   const month = new Date(monthYear).getMonth() + 1;
-  const year = new Date(monthYear).get
+  // const year = new Date(monthYear).get
 
   const response = await fetch("/api/transaction/liabilities", {
     method: "POST",
