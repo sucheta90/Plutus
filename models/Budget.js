@@ -24,6 +24,12 @@ Budget.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
+    indexes: [
+      {
+        unique: true,
+        fields: ["user_id", "month_year_id", "item_id"],
+      },
+    ],
     underscored: true,
     modelName: "budget",
   }

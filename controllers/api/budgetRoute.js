@@ -10,22 +10,34 @@ router.post("/", async (req, res) => {
       where: { month: req.body.month, year: req.body.year },
     });
     const monthYear = monthYearData.get({ plain: true });
-    console.log("MONTHYEAR", monthYear);
-    console.log("monthYear Id", monthYear.id);
     const item = itemData.get({ plain: true });
-    console.log(item);
-    const newBudgetItem = await Budget.create({
-      itemId: item.id,
-      budget_amount: req.body.amount,
-      userId: req.session.user_id,
-      monthYearId: monthYear.id,
+
+    const checkBudgetdata = await Budget.findOne({
+      where: {
+        monthYearId: monthYear.id,
+        userId: req.session.user_id,
+        itemId: item.id,
+      },
     });
-    console.log(`newBudgetItem ${newBudgetItem}`);
-    //newBudgetItem.setUser(req.session.user_id);
-    if (!newBudgetItem) {
-      res.status(400).json("Something went wrong.. Please try again.");
-      return;
+    if (checkBudgetdata) {
+      const checkBudget = checkBudgetdata.get({ plain: true });
+      checkBudget.budget_amount =
+        parseFloat(checkBudget.budget_amount) + parseFloat(req.body.amount);
+      console.log("EXSISTING BUDGET RECORD", checkBudget);
+    } else {
+      const newBudgetItem = await Budget.create({
+        itemId: item.id,
+        budget_amount: req.body.amount,
+        userId: req.session.user_id,
+        monthYearId: monthYear.id,
+      });
+      //newBudgetItem.setUser(req.session.user_id);
+      if (!newBudgetItem) {
+        res.status(400).json("Something went wrong.. Please try again.");
+        return;
+      }
     }
+
     res.status(200).json("Success");
   } catch (err) {
     console.error(err);
