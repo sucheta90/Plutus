@@ -21,8 +21,18 @@ router.post("/", async (req, res) => {
     });
     if (checkBudgetdata) {
       const checkBudget = checkBudgetdata.get({ plain: true });
-      checkBudget.budget_amount =
+      let amount =
         parseFloat(checkBudget.budget_amount) + parseFloat(req.body.amount);
+      await Budget.update(
+        { budget_amount: amount },
+        {
+          where: {
+            monthYearId: monthYear.id,
+            userId: req.session.user_id,
+            itemId: item.id,
+          },
+        }
+      );
       console.log("EXSISTING BUDGET RECORD", checkBudget);
     } else {
       const newBudgetItem = await Budget.create({
@@ -44,12 +54,5 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// router.put("/:id", (req, res) => {
-//   res.json("You have reached the put route in /budget");
-// });
-// router.delete("/:id", (req, res) => {
-//   res.json("You have reached the delete route in /budget");
-// });
 
 module.exports = router;

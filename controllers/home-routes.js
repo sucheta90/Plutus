@@ -1,6 +1,14 @@
 /* eslint-disable quotes */
 const router = require("express").Router();
-const { User, Asset, Liabilities, Trip, Budget, Item } = require("../models");
+const {
+  User,
+  Asset,
+  Liabilities,
+  Trip,
+  Budget,
+  Item,
+  MonthYear,
+} = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -76,7 +84,7 @@ router.get("/budget", withAuth, async (req, res) => {
       where: {
         userId: req.session.user_id,
       },
-      include: { model: Item },
+      include: { model: Item, MonthYear },
     });
     const itemData = await Item.findAll();
     const items = itemData.map((each) => each.get({ pure: true }));
