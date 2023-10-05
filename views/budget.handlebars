@@ -73,9 +73,10 @@
           </tr>
           {{!-- {{log this}} --}}
           {{#each budgets as |budget|}}
-            <tr>
+            <tr class="record-row">
               <td>{{budget.item.description}}</td>
               <td class="budget_amount">{{budget.budget_amount}} </td>
+              {{!-- <td><button class="delete-budget">Delete</button></td> --}}
             </tr>
           {{/each}}
           <tfoot>

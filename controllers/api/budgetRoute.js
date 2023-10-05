@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Budget, Item, MonthYear } = require("../../models");
 
+// posting budget
 router.post("/", async (req, res) => {
   try {
     const itemData = await Item.findOne({
@@ -33,7 +34,6 @@ router.post("/", async (req, res) => {
           },
         }
       );
-      console.log("EXSISTING BUDGET RECORD", checkBudget);
     } else {
       const newBudgetItem = await Budget.create({
         itemId: item.id,
