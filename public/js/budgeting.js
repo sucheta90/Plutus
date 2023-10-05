@@ -20,14 +20,24 @@ document
   .getElementById("save-btn")
   .addEventListener("click", addPlannedExpense);
 
-// eslint-disable-next-line no-unused-vars
 (async function findTotal(e) {
   let sum = 0;
   const amountClass = await document.querySelectorAll(".budget_amount");
   for (let each of amountClass) {
-    console.log(parseInt(each.innerHTML));
+    // console.log(parseInt(each.innerHTML));
     sum += parseInt(each.innerHTML);
   }
   // console.log(sum);
   document.getElementById("total-amount").innerText = `$ ${sum}`;
 })();
+
+// const budgetRecordsNode = document.querySelectorAll(".record-row");
+// const budgetRecords = Array.from(budgetRecordsNode);
+// for (let i = 0; i < budgetRecords.length; i++) {
+//   budgetRecords[i].addEventListener("click", (e) => {
+//     console.log("clicked");
+//     if (e.target.classList.contains("delete-budget")) {
+//       budgetRecords.splice(i, 1);
+//     }
+//   });
+// }
