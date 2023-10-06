@@ -5,15 +5,20 @@ async function addPlannedExpense() {
   const date = new Date(document.getElementById("monthYear").value);
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
-  const response = await fetch("/api/budget", {
-    method: "POST",
-    body: JSON.stringify({ category, amount, month, year }),
-    headers: { "Content-Type": "application/json" },
-  });
-  if (response.ok) {
-    location.reload("/budget");
+
+  if (category && amount && month && year) {
+    const response = await fetch("/api/budget", {
+      method: "POST",
+      body: JSON.stringify({ category, amount, month, year }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      location.reload("/budget");
+    } else {
+      alert("Something went wrong!");
+    }
   } else {
-    alert("Something went wrong!");
+    alert("Please enter all values, then proceed to save");
   }
 }
 

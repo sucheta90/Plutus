@@ -34,11 +34,11 @@
         <div class="content columns is-desktop">
           <!-- Content -->
            <span>
-            <input type="date" id="monthYear"/>
+            <input type="date" id="monthYear" required/>
            </span>
            <span class="column">
             <div class="select">
-            <select class="category">
+            <select class="category" required>
               {{#each items as |item|}}
               <option value={{item.description}}>{{item.description}}</option>
               {{/each}}
@@ -48,7 +48,7 @@
            
             
           <span class="column p-0">
-            <input type="number" placeholder="planned" class="amount input" />
+            <input type="number" placeholder="planned" class="amount input" required />
           </span>
           
             
