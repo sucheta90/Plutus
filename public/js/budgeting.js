@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 async function addPlannedExpense() {
   const category = document.querySelector(".category").value;
   const amount = parseFloat(document.querySelector(".amount").value.trim());
