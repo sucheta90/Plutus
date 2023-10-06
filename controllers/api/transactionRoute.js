@@ -29,25 +29,41 @@ router.post("/liabilities", async (req, res) => {
     const item = itemData.get({ plain: true });
     const itemizedBudgetData = await Budget.findOne({
       where: {
-        userId: req.session.id,
+        userId: req.session.user_id,
         monthYearId: monthYear.id,
         itemId: item.id,
       },
     });
-    const itemizedBudget = itemizedBudgetData.get({ plain: true });
-    // console.log("EXPENSE ITEM", item);
-    const newExpense = await Liabilities.create({
-      itemId: item.id,
-      amount: req.body.amount,
-      userId: req.session.user_id,
-      monthYearId: monthYear.id,
-      budgetId: itemizedBudget.id,
-    });
-    if (!newExpense) {
-      res.status(400).json(err);
-      return;
+    console.log("HERE IS THE ITEMIZED DATA", itemizedBudgetData);
+    if (itemizedBudgetData) {
+      console.log("INSIDE itemized BudgetADTA");
+      const itemizedBudget = itemizedBudgetData.get({ plain: true });
+      const newExpense = await Liabilities.create({
+        itemId: item.id,
+        amount: req.body.amount,
+        userId: req.session.user_id,
+        monthYearId: monthYear.id,
+        budgetId: itemizedBudget.id,
+      });
+      if (!newExpense) {
+        res.status(400).json(err);
+        return;
+      }
+      res.status(200).json(newExpense);
+    } else {
+      console.log("ELSE STATEMENT itemized BudgetADTA");
+      const newExpense = await Liabilities.create({
+        itemId: item.id,
+        amount: req.body.amount,
+        userId: req.session.user_id,
+        monthYearId: monthYear.id,
+      });
+      if (!newExpense) {
+        res.status(400).json(err);
+        return;
+      }
+      res.status(200).json(newExpense);
     }
-    res.status(200).json(newExpense);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
