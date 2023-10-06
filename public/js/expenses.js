@@ -7,15 +7,20 @@ async function addExpense(e) {
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
 
-  const response = await fetch("/api/transaction/liabilities", {
-    method: "POST",
-    body: JSON.stringify({ category, amount, month, year }),
-    headers: { "Content-Type": "application/json" },
-  });
-  if (response.ok) {
-    location.reload("/transaction/liabilities");
+  console.log("Category from expense", category);
+  if (amount && date && month && year) {
+    const response = await fetch("/api/transaction/liabilities", {
+      method: "POST",
+      body: JSON.stringify({ category, amount, month, year }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      location.reload("/transaction/liabilities");
+    } else {
+      alert("Something went wrong!");
+    }
   } else {
-    alert("Something went wrong!");
+    alert("Please enter values for all required fields");
   }
 }
 

@@ -32,12 +32,12 @@
         <p class="subtitle is-size-6 has-text-light">Bills and Subscriptions</p>
         <div class="content columns is-desktop">
           <!-- Content -->
-           <span><input type="date" id="monthYear"/></span>
+           <span><input type="date" id="monthYear" required/></span>
            <span class="column">
             <div class="select">
-            <select class="select column p-1 mb-2 category" id="test">
+            <select class="select column p-1 mb-2 category" id="test" required>
               {{#each items as |item|}}
-              <option value = {{item.description}}>{{item.description}}</option>
+              <option value = "{{item.description}}">{{item.description}}</option>
               {{/each}}
             </select>
             </div>
@@ -50,6 +50,8 @@
                     class="input column mb-2"
                     type="number"
                     placeholder="amount"
+                    required
+                  
                   />
 
           </span>

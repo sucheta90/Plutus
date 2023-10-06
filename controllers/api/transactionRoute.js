@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Asset, Liabilities, Item, MonthYear } = require("../../models");
+const { Asset, Liabilities, Item, MonthYear, Budget } = require("../../models");
 
 router.post("/asset", async (req, res) => {
   try {
@@ -27,18 +27,43 @@ router.post("/liabilities", async (req, res) => {
     });
     const monthYear = monthYearData.get({ plain: true });
     const item = itemData.get({ plain: true });
-    console.log("EXPENSE ITEM", item);
-    const newExpense = await Liabilities.create({
-      itemId: item.id,
-      amount: req.body.amount,
-      userId: req.session.user_id,
-      monthYearId: monthYear.id,
+    const itemizedBudgetData = await Budget.findOne({
+      where: {
+        userId: req.session.user_id,
+        monthYearId: monthYear.id,
+        itemId: item.id,
+      },
     });
-    if (!newExpense) {
-      res.status(400).json(err);
-      return;
+    console.log("HERE IS THE ITEMIZED DATA", itemizedBudgetData);
+    if (itemizedBudgetData) {
+      console.log("INSIDE itemized BudgetADTA");
+      const itemizedBudget = itemizedBudgetData.get({ plain: true });
+      const newExpense = await Liabilities.create({
+        itemId: item.id,
+        amount: req.body.amount,
+        userId: req.session.user_id,
+        monthYearId: monthYear.id,
+        budgetId: itemizedBudget.id,
+      });
+      if (!newExpense) {
+        res.status(400).json(err);
+        return;
+      }
+      res.status(200).json(newExpense);
+    } else {
+      console.log("ELSE STATEMENT itemized BudgetADTA");
+      const newExpense = await Liabilities.create({
+        itemId: item.id,
+        amount: req.body.amount,
+        userId: req.session.user_id,
+        monthYearId: monthYear.id,
+      });
+      if (!newExpense) {
+        res.status(400).json(err);
+        return;
+      }
+      res.status(200).json(newExpense);
     }
-    res.status(200).json(newExpense);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
