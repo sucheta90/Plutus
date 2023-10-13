@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 
 (async function getCurrentMonthData() {
-  const startDate = Date.now();
+  const startDate = new Date();
   console.log(startDate);
   const month = startDate.getMonth() + 1;
   const year = startDate.getFullYear();
-  console.log("Execute this");
+  console.log(typeof month);
+  console.log(year);
   const response = await fetch(`/budget/month/${month}/year/${year}`);
   if (!response.ok) {
     alert("Please try again!");
