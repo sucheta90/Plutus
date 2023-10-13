@@ -50,7 +50,6 @@ router.post(
           itemId: item.id,
         },
       });
-      console.log("HERE IS THE ITEMIZED DATA", itemizedBudgetData);
       if (itemizedBudgetData) {
         console.log("INSIDE itemized BudgetADTA");
         const itemizedBudget = itemizedBudgetData.get({ plain: true });

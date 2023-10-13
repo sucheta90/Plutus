@@ -86,10 +86,36 @@ router.get("/budget", withAuth, async (req, res) => {
       },
       include: { model: Item, MonthYear },
     });
+    // console.log
     const itemData = await Item.findAll();
     const items = itemData.map((each) => each.get({ pure: true }));
     const budgets = budgetData.map((each) => each.get({ plain: true }));
-    console.log("LOG BUDGET", budgets);
+    // console.log("LOG BUDGET", budgets);
+    res.render("budget", { budgets, items });
+    // res.render("budget");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+router.get("/budget/month/:month/year/:year", withAuth, async (req, res) => {
+  try {
+    const month = req.params.month;
+    const year = req.params.year;
+    const monthYearData = await MonthYear.findOne({
+      where: { month: month, year: year },
+    });
+    const monthYear = monthYearData.get({ plain: true });
+    const budgetData = await Budget.findAll({
+      where: {
+        userId: req.session.user_id,
+        monthYearId: monthYear.id,
+      },
+      include: { model: Item, MonthYear },
+    });
+    const itemData = await Item.findAll();
+    const items = itemData.map((each) => each.get({ pure: true }));
+    const budgets = budgetData.map((each) => each.get({ plain: true }));
+    // console.log("LOG BUDGET", budgets);
     res.render("budget", { budgets, items });
     // res.render("budget");
   } catch (err) {
