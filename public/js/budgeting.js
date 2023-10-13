@@ -1,4 +1,17 @@
 /* eslint-disable no-unused-vars */
+
+(async function getCurrentMonthData() {
+  const startDate = Date.now();
+  console.log(startDate);
+  const month = startDate.getMonth() + 1;
+  const year = startDate.getFullYear();
+  console.log("Execute this");
+  const response = await fetch(`/budget/month/${month}/year/${year}`);
+  if (!response.ok) {
+    alert("Please try again!");
+  }
+})();
+
 async function addPlannedExpense() {
   const category = document.querySelector(".category").value;
   const amount = parseFloat(document.querySelector(".amount").value.trim());
