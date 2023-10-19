@@ -32,35 +32,36 @@
         <p class="subtitle is-size-6 has-text-light">Bills and Subscriptions</p>
         <div class="content columns is-desktop">
           <!-- Content -->
-           <span><input type="date" id="monthYear" min="2023-01-01" max="2050-12-31" required/></span>
-           <span class="column">
-            <div class="select">
+            {{!-- Calendar dropdown --}}
+            <input class="column" type="date" id="monthYear" min="2023-01-01" max="2050-12-31" required/>
+           {{!-- Select Category --}}
+            {{!-- <div class="column"> --}}
             <select class="select column p-1 mb-2 category" id="test" required>
               {{#each items as |item|}}
               <option value = "{{item.description}}">{{item.description}}</option>
               {{/each}}
             </select>
-            </div>
-           </span>
+            {{!-- </div> --}}
+          
            
             
-          <span class="column">
+          
              <input
                     id="amount"
-                    class="input column mb-2"
+                    class="input column"
                     type="number"
                     placeholder="amount"
                     required
                   
                   />
 
-          </span>
+         
           
             
           
-          <span class="column">
-            <button class="button is-small is-primary column p-1" id="add-expense">Add Expense +</button>
-          </span>
+          
+            <button class="button column  is-primary  p-1" id="add-expense">Add Expense +</button>
+       
        
         </div>
           
