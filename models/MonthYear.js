@@ -13,7 +13,7 @@ MonthYear.init(
       autoIncrement: true,
     },
     month: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     year: {
