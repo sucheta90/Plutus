@@ -1,6 +1,7 @@
 # Plutus
-<p align='center'>
-<img src='./public/asset/Plutus-logos.jpeg' width='80%'/>
+<p align='center' width='80%'>
+
+![logo](/public/asset/Plutus-logos.jpeg)
 </p>
 
 ## Description
@@ -27,14 +28,10 @@ This was our groups first full stack application that we developed from scratch,
 ## Installation
 
 Click (here) to visit the Plutus application or scan the QR code below: <br>
-<p align='center'>
-<a href='https://plutus-budgeting-ed67f205c52b.herokuapp.com/'><img src='./public/asset/PLUTUS.png' width="60%"/><a>
-</p>
 
-<p align='center'>
-<a href='https://github.com/sucheta90/Plutus'><img src='./public/asset/Plutus_githubRepo.png' width="60%"/><a>
-</p>
+![Alt text](/public/asset/PLUTUS.png)
 
+![Alt text](/public/asset/Plutus_githubRepo.png)
 
 If you're a new user, click on "Sign Up".
 Provide the required information, which will include your name, email address, and password. <br>
@@ -46,9 +43,9 @@ Enter your registered email address and password.
 
 Once logged in you will be presented with the Plutus dashboard - a quick breakdown of your income and expenses grouped by month. The navigation pane will allow you to access other sections of Plutus. These sections can be found in the Features part of the README
 
-<img src='./public/asset/homepageSrn.png'/>
-<img src='./public/asset/userLogin.png'/>
-<img src='./public/asset/userSignup.png'/>
+![homescreen](/public/asset/homepageSrn.png)
+![userLogin](/public/asset/userLogin.png)
+![user signup](/public/asset/userSignup.png)
 
 ## Features
 
@@ -80,6 +77,10 @@ The Trip Budget tab will allow the user to add expenses for an upcoming trip. Ad
 
 Once a trip expense has been added, a pie chart above will be generated. This chart will show a breakdown of all your trip expenses grouped together by category.
 
+![JavaScript:](https://img.shields.io/badge/JavaScript-55.1%25-blue)
+             ![HTML:](https://img.shields.io/badge/HTML-9.3%25-red)
+             ![CSS:](https://img.shields.io/badge/CSS-1%25-purple)
+             ![Handlebars:](https://img.shields.io/badge/handlebars-34.6%25-yellow)
 ## Credits
 
 SMU Coding Bootcamp
