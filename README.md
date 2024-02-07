@@ -98,6 +98,3 @@ SMU Coding Bootcamp
 [Background Image](https://unsplash.com/photos/SoT4-mZhyhE)
 
 [Pie Charts](https://www.highcharts.com/demo#highcharts-demo-pie-charts)
-
-
-hi
